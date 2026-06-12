@@ -49,12 +49,6 @@ export function Header({ dark = false }: { dark?: boolean }) {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <a
-            href={site.loginUrl}
-            className={`text-sm font-medium ${onHero ? "text-white/80 hover:text-white" : "text-muted hover:text-foreground"}`}
-          >
-            Sign in
-          </a>
           <Link
             href="/demo"
             className="rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-dark"
