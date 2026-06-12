@@ -96,9 +96,6 @@ export function Header({ dark = false }: { dark?: boolean }) {
                 {link.label}
               </Link>
             ))}
-            <a href={site.loginUrl} className="text-sm font-medium">
-              Sign in
-            </a>
             <Link
               href="/demo"
               className="rounded-full bg-brand px-5 py-2.5 text-center text-sm font-semibold text-white"
