@@ -30,10 +30,6 @@ export function Footer() {
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/60">
               {site.description}
             </p>
-            <p className="mt-4 text-sm text-white/50">
-              A product of{" "}
-              <span className="font-medium text-brand-light">HotelProxi</span>
-            </p>
           </div>
 
           {Object.entries(footerLinks).map(([title, links]) => (
@@ -70,7 +66,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
           <p className="text-sm text-white/40">
-            © {new Date().getFullYear()} StayView · HotelProxi. All rights reserved.
+            © {new Date().getFullYear()} StayView All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-6">
             {navLinks.map((link) => (

@@ -2,12 +2,12 @@ export const site = {
   name: "StayView",
   tagline: "The PMS built for how African properties actually operate",
   description:
-    "StayView by HotelProxi unifies front desk, restaurant POS, night audit, inventory, city ledger, and live analytics in one platform for hotels, hostels, lodges, and hospitality groups across Africa. Host in the cloud or run on-premise when reliable internet isn't guaranteed.",
+    "StayView PMS unifies front desk, restaurant POS, night audit, inventory, city ledger, and live analytics in one platform for hotels, hostels, lodges, and hospitality groups across Africa. Host in the cloud or run on-premise when reliable internet isn't guaranteed.",
   url: "https://stayview.com.ng",
-  email: "info@hotelproxi.com",
-  phone: "+234 800 STAYVIEW",
+  email: "stayviewpms@gmail.com",
+  phone: "+234 905 800 7738",
   loginUrl: "https://app.stayview.com.ng/auth/login",
-  setupUrl: "https://setup.stayview.com.ng/login",
+  setupUrl: "https://config.stayview.com.ng/login",
   outletLoginUrl: "https://outlet.stayview.com.ng/login",
 };
 
