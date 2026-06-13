@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { featureCategories } from "@/lib/content";
-import { featureIconMap } from "@/components/svg/FeatureIcons";
+import { getFeatureIcon } from "@/components/svg/FeatureIcons";
 import { CtaBanner } from "@/components/home/CtaBanner";
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ export default function FeaturesPage() {
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-6xl space-y-24 px-4 sm:px-6">
           {featureCategories.map((feature, index) => {
-            const Icon = featureIconMap[feature.id as keyof typeof featureIconMap];
+            const Icon = getFeatureIcon(feature.id);
             const reversed = index % 2 === 1;
             return (
               <article

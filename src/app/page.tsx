@@ -1,6 +1,11 @@
 import { CtaBanner } from "@/components/home/CtaBanner";
 import { FeaturePreview } from "@/components/home/FeaturePreview";
 import { Hero } from "@/components/home/Hero";
+import { ProductUseCases } from "@/components/home/ProductUseCases";
+import { SocialProof } from "@/components/home/SocialProof";
+import { SupportOnboarding } from "@/components/home/SupportOnboarding";
+import { TrustBar } from "@/components/home/TrustBar";
+import { WhyStayView } from "@/components/home/WhyStayView";
 import { PricingCards } from "@/components/pricing/PricingCards";
 import { BlogCard } from "@/components/blog/BlogCard";
 import { blogPosts } from "@/lib/content";
@@ -10,7 +15,12 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <ProductUseCases />
+      <WhyStayView />
       <FeaturePreview />
+      <SocialProof />
+      <SupportOnboarding />
+      <TrustBar />
       <section className="border-y border-border bg-surface py-20 sm:py-28">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="mx-auto max-w-2xl text-center">

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { featureCategories } from "@/lib/content";
-import { featureIconMap } from "@/components/svg/FeatureIcons";
+import { getFeatureIcon } from "@/components/svg/FeatureIcons";
 
 export function FeaturePreview() {
   return (
@@ -18,7 +18,7 @@ export function FeaturePreview() {
 
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {featureCategories.map((feature) => {
-            const Icon = featureIconMap[feature.id as keyof typeof featureIconMap];
+            const Icon = getFeatureIcon(feature.id);
             return (
               <article
                 key={feature.id}

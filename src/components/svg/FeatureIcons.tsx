@@ -61,7 +61,14 @@ export const featureIconMap = {
   frontdesk: FrontDeskIcon,
   folios: FolioIcon,
   fb: FbIcon,
+  restaurant: FbIcon,
   inventory: InventoryIcon,
   reports: ReportsIcon,
   platform: PlatformIcon,
 } as const;
+
+export type FeatureIconId = keyof typeof featureIconMap;
+
+export function getFeatureIcon(id: string) {
+  return featureIconMap[id as FeatureIconId] ?? PlatformIcon;
+}

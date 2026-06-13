@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: `${site.name} — Hotel PMS by HotelProxi`,
+    default: `${site.name} — Property Management System`,
     template: `%s · ${site.name}`,
   },
   description: site.description,
