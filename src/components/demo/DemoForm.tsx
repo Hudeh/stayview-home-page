@@ -6,6 +6,7 @@ type FormState = "idle" | "submitting" | "success" | "error";
 
 export function DemoForm() {
   const [state, setState] = useState<FormState>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -13,13 +14,33 @@ export function DemoForm() {
     property: "",
     rooms: "",
     message: "",
+    website: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setState("submitting");
-    await new Promise((r) => setTimeout(r, 800));
-    setState("success");
+    setErrorMessage("");
+
+    try {
+      const res = await fetch("/api/demo", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = (await res.json()) as { success?: boolean; message?: string };
+
+      if (!res.ok || !data.success) {
+        setState("error");
+        setErrorMessage(data.message || "Could not submit your request. Please try again.");
+        return;
+      }
+
+      setState("success");
+    } catch {
+      setState("error");
+      setErrorMessage("Network error. Please check your connection and try again.");
+    }
   };
 
   if (state === "success") {
@@ -32,7 +53,8 @@ export function DemoForm() {
         </div>
         <h3 className="mt-6 text-xl font-semibold text-green-900">Request received</h3>
         <p className="mt-2 text-green-800">
-          Our team will contact you within one business day to schedule your StayView demo.
+          We sent a confirmation to <strong>{form.email}</strong>. Our team will contact you
+          within one business day to schedule your StayView demo.
         </p>
       </div>
     );
@@ -40,6 +62,24 @@ export function DemoForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      {state === "error" && errorMessage && (
+        <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">
+          {errorMessage}
+        </div>
+      )}
+
+      {/* Honeypot — hidden from users, bots may fill it */}
+      <input
+        type="text"
+        name="website"
+        value={form.website}
+        onChange={(e) => setForm({ ...form, website: e.target.value })}
+        className="hidden"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden
+      />
+
       <div className="grid gap-6 sm:grid-cols-2">
         <label className="block">
           <span className="text-sm font-medium">Full name *</span>
