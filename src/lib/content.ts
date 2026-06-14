@@ -95,7 +95,7 @@ export const productUseCases: ProductUseCase[] = [
     id: "booking",
     name: "Booking Engine",
     tagline: "Direct, commission-free bookings",
-    tierBadge: "Platinum · rolling out",
+    tierBadge: "Platinum",
     description:
       "Let guests book directly from your hotel website — no OTA commission on every reservation. The StayView booking engine shows live availability and rates from your PMS, collects guest details and payment, and creates the reservation in StayView the moment the booking is confirmed.",
     forWho: "Hotels with a website who want more direct revenue and fewer OTA fees",
@@ -108,7 +108,7 @@ export const productUseCases: ProductUseCase[] = [
       "Multi-property groups: book any branch from one engine",
     ],
     modes: ["Platinum plan", "Website widget", "Paystack-ready"],
-    ctaLabel: "Join early access",
+    ctaLabel: "Enable booking engine",
     ctaHref: "/demo",
     secondaryLabel: "See Platinum plan",
     secondaryHref: "/pricing",
