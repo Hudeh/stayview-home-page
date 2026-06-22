@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: "How does billing work?",
-    a: "Subscriptions are managed per business branch with monthly or annual billing in NGN. Renew through the HotelProxi backoffice portal.",
+    a: "Subscriptions are managed per business branch with monthly or annual billing in NGN. Renew through the StayView backoffice portal.",
   },
 ];
 
