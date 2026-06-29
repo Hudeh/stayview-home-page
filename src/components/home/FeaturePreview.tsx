@@ -11,7 +11,7 @@ export function FeaturePreview() {
             Everything your property team needs
           </h2>
           <p className="mt-4 text-lg text-muted">
-            From check-in to night audit, F&B to inventory — StayView connects
+            From check-in to night audit, F&B to inventory and HR payroll — StayView connects
             every department with real-time data.
           </p>
         </div>
@@ -25,6 +25,11 @@ export function FeaturePreview() {
                 className="card-hover rounded-2xl border border-border bg-surface p-8"
               >
                 <Icon className="h-12 w-12" />
+                {"tierBadge" in feature && feature.tierBadge ? (
+                  <span className="mt-4 inline-flex rounded-full bg-brand/10 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-brand">
+                    {feature.tierBadge}
+                  </span>
+                ) : null}
                 <h3 className="mt-6 text-xl font-semibold">{feature.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted">
                   {feature.description}

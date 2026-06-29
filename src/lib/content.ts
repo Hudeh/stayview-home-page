@@ -2,7 +2,7 @@ export const site = {
   name: "StayView",
   tagline: "The PMS built for how African properties actually operate",
   description:
-    "StayView PMS unifies front desk, restaurant POS, night audit, inventory, city ledger, and live analytics in one platform for hotels, hostels, lodges, and hospitality groups across Africa. Host in the cloud or run on-premise when reliable internet isn't guaranteed.",
+    "StayView PMS unifies front desk, restaurant POS, night audit, inventory, city ledger, HR & payroll, and live analytics in one platform for hotels, hostels, lodges, and hospitality groups across Africa. Host in the cloud or run on-premise when reliable internet isn't guaranteed.",
   url: "https://stayview.com.ng",
   email: "stayviewpms@gmail.com",
   phone: "+234 905 800 7738",
@@ -40,6 +40,7 @@ export const productUseCases: ProductUseCase[] = [
       "Run night audit with pre-checks before rolling the business date",
       "Track AR invoices, city ledger, and payment reconciliation",
       "Manage stores, purchases, and department requisitions (Platinum)",
+      "HR: staff profiles, leave, attendance, shifts, and monthly payroll (Platinum)",
       "View occupancy, revenue, and operational reports in one dashboard",
     ],
     modes: ["Full PMS", "Front desk + accounting focus", "Cloud or on-premise"],
@@ -117,7 +118,7 @@ export const productUseCases: ProductUseCase[] = [
 
 export const platformStats = [
   { value: "4", label: "Product modules" },
-  { value: "15+", label: "PMS modules" },
+  { value: "16+", label: "PMS modules" },
   { value: "Cloud / VPS", label: "Deployment" },
   { value: "NGN", label: "Local pricing" },
 ];
@@ -296,6 +297,11 @@ export const plans: Plan[] = [
       "Enterprise-grade PMS for hotel groups and large properties — channel connectivity, banquet management, stock reconciliation, and a dedicated success team behind you.",
     modules: [
       "Everything in Premium Plus",
+      "Human resources & staff profiles",
+      "Leave, attendance & shift management",
+      "Security clock station with photo verification",
+      "Monthly payroll — HR prepares, accounting approves",
+      "Salary payments with general ledger posting",
       "Channel manager & OTA live sync",
       "Banquet & event management",
       "Cross-department requisitions",
@@ -376,6 +382,21 @@ export const featureCategories = [
       "Accounts receivable and AR aging reports",
       "Scheduled PDF and Excel delivery via email",
       "Unified front desk, restaurant, and accounting view",
+    ],
+  },
+  {
+    id: "hr",
+    title: "Human resources & payroll",
+    tierBadge: "Platinum",
+    description:
+      "Run your people operations inside StayView — not in spreadsheets or a separate HR tool. HR maintains staff profiles with job titles, base salaries, and bank details. Leave requests go through approval workflows. Security or supervisors clock staff in with photo verification, late and overtime tracked against scheduled shifts. Each month, HR prepares payroll for every active employee in one batch, reviews totals, and sends it to accounting. Finance approves or rejects with a full staff breakdown; approved payroll posts salary expenses to the general ledger automatically.",
+    bullets: [
+      "Staff HR profiles with employee numbers and employment status",
+      "Leave types, requests, and manager approval workflow",
+      "Attendance records with security clock-in and photo verification",
+      "Department shift templates and weekly staff schedules",
+      "Monthly payroll batch with per-staff gross, deductions, and net totals",
+      "HR submit → accounting approve workflow with GL posting on approval",
     ],
   },
   {
@@ -472,6 +493,23 @@ export const blogPosts: BlogPost[] = [
       "StayView's inventory module is built around how hotel operations actually work. You define your stores — a main store, a kitchen store, a bar store, a housekeeping store — and manage stock levels and transfers between them from a single interface. Vendors are added to the system with contact details and payment terms. Purchase orders follow a defined workflow: raised by the purchasing team, approved by management, sent to the vendor, and then confirmed against a goods received note when the delivery arrives and is counted.",
       "Department requisitions follow the same workflow logic. A department head submits a requisition through the system — the kitchen needs 10 kg of rice from the main store, or housekeeping needs 20 bottles of disinfectant. An authorised manager reviews and approves or adjusts the request before any stock is released. The transfer is logged against both stores immediately, and every movement has a timestamp and a user attached to it.",
       "For hotels using StayView's Restaurant POS, menu items can be linked to their component ingredients with precise quantities per portion. When a plate of jollof rice is sold at the restaurant, the system automatically deducts the corresponding rice, tomato, oil, and seasoning quantities from the kitchen store. Finance can see the cost of sales set against revenue in real time, and the general manager can review gross margin by menu item without waiting for a month-end physical count to reveal what actually left the kitchen.",
+    ],
+  },
+  {
+    slug: "hr-payroll-workflow-hotels",
+    title: "Monthly payroll inside your PMS: HR prepares, finance approves",
+    excerpt:
+      "How StayView Platinum connects staff profiles, attendance, shift schedules, and accounting-approved payroll — without exporting salaries to a separate spreadsheet.",
+    date: "2026-06-20",
+    readTime: "5 min",
+    category: "Human resources",
+    author: "StayView Team",
+    content: [
+      "Payroll in many hotels still lives outside the PMS — HR maintains a spreadsheet, finance re-keys totals into accounting, and nobody can easily tie a salary payment back to attendance or shift records. When a GM asks why overtime on the payroll does not match the security register, the answer requires opening three different files and hoping the dates align.",
+      "StayView Platinum brings HR operations into the same platform as front desk and finance. Each staff member has an HR profile linked to their system login: employee number, job title, base salary, bank details, and employment status. Leave requests follow an approval workflow. Security or supervisors clock staff in at the gate with photo verification, and clock events are checked against weekly shift schedules so late arrivals and overtime are recorded automatically.",
+      "At month end, HR prepares payroll in one action. StayView creates a salary line for every active employee using their base salary, allowances, and deductions for the period. HR reviews the full staff list and month totals, adjusts individual lines if needed, then submits the batch to accounting.",
+      "Accounting sees payroll pending approval on the salary payments screen — every employee, gross, deductions, and net pay in one view. Approve and StayView posts salary expense to the general ledger. Reject and the batch returns to HR with a reason, without partial postings or manual journal entries.",
+      "The result is a clear audit trail from clock-in to payslip: who worked, what they were scheduled for, what they earned, and when finance signed off. For hotel groups on StayView, that visibility scales across branches without adding another HR software subscription.",
     ],
   },
 ];

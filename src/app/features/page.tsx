@@ -7,7 +7,7 @@ import { CtaBanner } from "@/components/home/CtaBanner";
 export const metadata: Metadata = {
   title: "Features",
   description:
-    "Front desk, folios, F&B POS, inventory, night audit, reports, and multi-property deployment with StayView.",
+    "Front desk, folios, F&B POS, inventory, HR & payroll, night audit, reports, and multi-property deployment with StayView.",
 };
 
 export default function FeaturesPage() {
@@ -19,7 +19,7 @@ export default function FeaturesPage() {
             Built for every department
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted">
-            StayView unifies front desk, finance, F&B, housekeeping, and leadership
+            StayView unifies front desk, finance, F&B, housekeeping, HR, and leadership
             in one multi-tenant platform — cloud SaaS or on your own VPS.
           </p>
         </div>
@@ -37,6 +37,11 @@ export default function FeaturesPage() {
               >
                 <div className={reversed ? "lg:[direction:ltr]" : ""}>
                   <Icon className="h-14 w-14" />
+                  {"tierBadge" in feature && feature.tierBadge ? (
+                    <span className="mt-4 inline-flex rounded-full bg-brand/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand">
+                      {feature.tierBadge}
+                    </span>
+                  ) : null}
                   <h2 className="mt-6 text-3xl font-bold">{feature.title}</h2>
                   <p className="mt-4 text-lg leading-relaxed text-muted">
                     {feature.description}

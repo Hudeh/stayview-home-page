@@ -16,7 +16,7 @@ export function Hero() {
           </h1>
           <p className="mt-6 max-w-lg text-lg leading-relaxed text-white/70">
             {site.tagline}. Front desk, F&amp;B POS, channel manager, booking engine,
-            night audit, inventory, and analytics — for lodges, serviced apartments,
+            HR &amp; payroll, night audit, inventory, and analytics — for lodges, serviced apartments,
             and growing hospitality groups.
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">

@@ -57,6 +57,23 @@ export function PlatformIcon({ className = "" }: IconProps) {
   );
 }
 
+export function HrIcon({ className = "" }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 48 48" fill="none" aria-hidden>
+      <circle cx="18" cy="16" r="6" stroke="#7352c7" strokeWidth="2" />
+      <circle cx="32" cy="18" r="5" stroke="#9b7fe0" strokeWidth="2" />
+      <path
+        d="M8 38c0-6 4.5-10 10-10s10 4 10 10M26 38c0-5 3-8.5 7-8.5"
+        stroke="#7352c7"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <rect x="10" y="26" width="28" height="14" rx="3" stroke="#9b7fe0" strokeWidth="2" />
+      <path d="M16 33h10M16 36h6" stroke="#7352c7" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 export const featureIconMap = {
   frontdesk: FrontDeskIcon,
   folios: FolioIcon,
@@ -64,6 +81,7 @@ export const featureIconMap = {
   restaurant: FbIcon,
   inventory: InventoryIcon,
   reports: ReportsIcon,
+  hr: HrIcon,
   platform: PlatformIcon,
 } as const;
 

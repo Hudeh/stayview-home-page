@@ -22,6 +22,10 @@ const faqs = [
     a: "Premium Plus supports F&B standalone product mode — outlets, menu, POS, and inventory without full PMS modules.",
   },
   {
+    q: "Is HR and payroll included?",
+    a: "Yes — on Platinum. Staff profiles, leave, attendance, shift schedules, security clock-in, monthly payroll preparation, and accounting approval with general ledger posting are part of the Platinum plan.",
+  },
+  {
     q: "How does billing work?",
     a: "Subscriptions are managed per business branch with monthly or annual billing in NGN. Renew through the StayView backoffice portal.",
   },
