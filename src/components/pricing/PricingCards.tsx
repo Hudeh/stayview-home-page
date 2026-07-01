@@ -30,7 +30,7 @@ export function PricingCards({ showAnnualNote = true }: { showAnnualNote?: boole
             </p>
           )}
           <p className="mt-4 text-sm font-medium text-brand">
-            {plan.rooms} rooms per branch
+            {plan.rooms}
           </p>
           <ul className="mt-8 flex-1 space-y-3 border-t border-border pt-8">
             {plan.modules.map((m) => (

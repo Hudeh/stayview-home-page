@@ -248,7 +248,7 @@ export const plans: Plan[] = [
     monthly: 40000,
     annual: 38000,
     currency: "NGN",
-    rooms: "Up to 50 rooms",
+    rooms: "Up to 50 rooms per branch",
     branches: 1,
     description:
       "Everything an independent hotel or boutique property needs to run a clean, professional operation — from first reservation to night audit.",
@@ -269,7 +269,7 @@ export const plans: Plan[] = [
     monthly: 50000,
     annual: 48000,
     currency: "NGN",
-    rooms: "Up to 70 rooms",
+    rooms: "Up to 70 rooms per branch",
     branches: 4,
     highlight: true,
     description:
@@ -291,7 +291,7 @@ export const plans: Plan[] = [
     monthly: 60000,
     annual: 58000,
     currency: "NGN",
-    rooms: "Up to 120 rooms",
+    rooms: "Up to 120 rooms per branch",
     branches: 6,
     description:
       "Enterprise-grade PMS for hotel groups and large properties — channel connectivity, banquet management, stock reconciliation, and a dedicated success team behind you.",
