@@ -428,7 +428,7 @@ export type BlogPost = {
 export const blogPosts: BlogPost[] = [
   {
     slug: "night-audit-checklist-2026",
-    title: "The modern night audit checklist for Nigerian hotels",
+    title: "The modern night audit checklist for hotels",
     excerpt:
       "How unified pre-checks, business date rollover, and automated room charges eliminate end-of-day errors and give your GM a clean start every morning.",
     date: "2026-05-12",
