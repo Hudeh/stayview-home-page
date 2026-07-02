@@ -266,8 +266,8 @@ export const plans: Plan[] = [
   {
     id: "premium-plus",
     name: "Premium Plus",
-    monthly: 50000,
-    annual: 48000,
+    monthly: 60000,
+    annual: 58000,
     currency: "NGN",
     rooms: "Up to 70 rooms per branch",
     branches: 4,
@@ -288,8 +288,8 @@ export const plans: Plan[] = [
   {
     id: "platinum",
     name: "Platinum",
-    monthly: 60000,
-    annual: 58000,
+    monthly: 80000,
+    annual: 78000,
     currency: "NGN",
     rooms: "Up to 120 rooms per branch",
     branches: 6,
