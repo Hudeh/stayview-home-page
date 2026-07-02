@@ -46,7 +46,7 @@ export default function HomePage() {
             <div>
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">From the blog</h2>
               <p className="mt-4 text-lg text-muted">
-                Insights on hotel operations, F&B, and technology in Africa.
+                Insights on hotel operations, F&B, and technology.
               </p>
             </div>
             <Link href="/blog" className="text-sm font-semibold text-brand hover:text-brand-dark">

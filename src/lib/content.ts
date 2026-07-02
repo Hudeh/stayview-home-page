@@ -108,7 +108,7 @@ export const productUseCases: ProductUseCase[] = [
       "Packages, promotions, and seasonal rate plans",
       "Multi-property groups: book any branch from one engine",
     ],
-    modes: ["Platinum plan", "Website widget", "Paystack-ready"],
+    modes: ["Platinum plan", "Website widget"],
     ctaLabel: "Enable booking engine",
     ctaHref: "/demo",
     secondaryLabel: "See Platinum plan",
@@ -134,19 +134,19 @@ export const testimonials: Testimonial[] = [
     quote:
       "Night audit used to mean chasing restaurant tickets and open folios. StayView pre-checks show everything in one list — we close the day in minutes, not hours.",
     role: "Front Office Manager",
-    location: "Lagos",
+    location: "",
   },
   {
     quote:
       "Our restaurant and front desk finally share the same numbers. Room charges post to the folio when the guest orders — checkout is calm for the first time.",
     role: "General Manager",
-    location: "Abuja",
+    location: "",
   },
   {
     quote:
       "We needed the PMS to keep running when the internet drops. On-premise StayView on our local network was the deciding factor over cloud-only alternatives.",
     role: "Owner",
-    location: "Port Harcourt",
+    location: "",
   },
 ];
 
@@ -207,7 +207,6 @@ export const whyStayViewPoints: WhyStayViewPoint[] = [
 ];
 
 export const integrations = [
-  "Paystack",
   "Booking.com",
   "Airbnb",
   "Thermal printers",
