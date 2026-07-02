@@ -1,8 +1,8 @@
 export const site = {
   name: "StayView",
-  tagline: "The PMS built for how African properties actually operate",
+  tagline: "The PMS built for how properties actually operate",
   description:
-    "StayView PMS unifies front desk, restaurant POS, night audit, inventory, city ledger, HR & payroll, and live analytics in one platform for hotels, hostels, lodges, and hospitality groups across Africa. Host in the cloud or run on-premise when reliable internet isn't guaranteed.",
+    "StayView PMS unifies front desk, restaurant POS, night audit, inventory, city ledger, HR & payroll, and live analytics in one platform for hotels, hostels, lodges, and hospitality groups. Host in the cloud or run on-premise when reliable internet isn't guaranteed.",
   url: "https://stayview.com.ng",
   email: "stayviewpms@gmail.com",
   phone: "+234 905 800 7738",
@@ -120,7 +120,7 @@ export const platformStats = [
   { value: "4", label: "Product modules" },
   { value: "16+", label: "PMS modules" },
   { value: "Cloud / VPS", label: "Deployment" },
-  { value: "NGN", label: "Local pricing" },
+  { value: "Multi-currency", label: "Billing" },
 ];
 
 export type Testimonial = {
@@ -185,9 +185,9 @@ export type WhyStayViewPoint = {
 
 export const whyStayViewPoints: WhyStayViewPoint[] = [
   {
-    title: "Built for Nigeria, not imported",
+    title: "Built for real operations, not a demo environment",
     description:
-      "NGN billing, local tax and folio workflows, and support in your timezone — not a global product with Africa as an afterthought.",
+      "Configured around how your front desk, finance, and F&B teams actually work day to day — local tax and folio workflows, multi-currency billing, and support in your timezone.",
   },
   {
     title: "Runs when the internet doesn't",
@@ -403,7 +403,7 @@ export const featureCategories = [
     id: "platform",
     title: "Platform & deployment",
     description:
-      "StayView is built for the reality of running a hotel in Africa — which sometimes means unreliable internet, high staff turnover, and properties spread across multiple cities. Deploy in the cloud for a zero-infrastructure setup that scales as you grow, or deploy on-premise when your property needs to run fully offline. Role-based access and PIN-secured staff logins ensure your team sees only what their role allows, and managers retain full operational control at all times.",
+      "StayView is built for the operational reality of running a hotel — unreliable internet in some markets, high staff turnover, and properties spread across multiple cities or regions. Deploy in the cloud for a zero-infrastructure setup that scales as you grow, or deploy on-premise when your property needs to run fully offline. Role-based access and PIN-secured staff logins ensure your team sees only what their role allows, and managers retain full operational control at all times.",
     bullets: [
       "Cloud SaaS with property subdomains — or fully on-premise",
       "Role-based access control with PIN-secured staff login",
@@ -463,7 +463,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "cloud-vs-onprem-pms-africa",
-    title: "Cloud vs on-premise PMS: what African hoteliers need to consider",
+    title: "Cloud vs on-premise PMS: what hoteliers in low-connectivity markets need to consider",
     excerpt:
       "Connectivity, data ownership, and total cost of operation — a practical guide for independent properties, growing groups, and hotels in low-connectivity areas.",
     date: "2026-03-15",
@@ -471,11 +471,11 @@ export const blogPosts: BlogPost[] = [
     category: "Strategy",
     author: "HotelProxi",
     content: [
-      "The decision between cloud and on-premise PMS is rarely a technical one. For most African hotels, it comes down to three practical realities: how reliable is your internet connection on a typical Tuesday afternoon, how sensitive is your ownership's position on where guest data is stored, and what does your on-site IT capability actually look like when something needs attention at 11pm.",
+      "The decision between cloud and on-premise PMS is rarely a technical one. For most hotels in emerging or low-connectivity markets, it comes down to three practical realities: how reliable is your internet connection on a typical Tuesday afternoon, how sensitive is your ownership's position on where guest data is stored, and what does your on-site IT capability actually look like when something needs attention at 11pm.",
       "Cloud PMS has clear advantages that make it the right starting point for most properties. There is no server to procure, no operating system to patch, and no backup schedule to configure and verify. Your property goes live on a secured subdomain within days. Updates roll out automatically. Staff access the system from any browser on any device. For new properties and hotel groups expanding across multiple cities, cloud deployment reduces the time from decision to live operation dramatically.",
-      "On-premise deployment is the right answer when one or more of the following apply: your property is in a location with consistently poor or expensive internet, your ownership has strict data residency requirements that prevent guest records from residing outside your premises, or you need the PMS to remain fully operational during extended network outages — which, in parts of Nigeria and across Africa, is not an edge case. StayView deploys on-premise using the identical codebase as the cloud version, packaged as a Docker Compose stack that runs on a dedicated mini PC at the property and serves every staff device on the local network.",
+      "On-premise deployment is the right answer when one or more of the following apply: your property is in a location with consistently poor or expensive internet, your ownership has strict data residency requirements that prevent guest records from residing outside your premises, or you need the PMS to remain fully operational during extended network outages — which, in many emerging markets, is not an edge case. StayView deploys on-premise using the identical codebase as the cloud version, packaged as a Docker Compose stack that runs on a dedicated mini PC at the property and serves every staff device on the local network.",
       "A pattern that works well for hotel groups is a deliberate hybrid: cloud deployment for newer or secondary properties where infrastructure flexibility adds the most value, and on-premise for flagship properties where the general manager needs guaranteed uptime regardless of the ISP's reliability that day. Both deployment modes run the same StayView application with the same features, so training, reporting, and finance workflows are consistent across the group.",
-      "On hardware cost: an on-premise installation typically runs comfortably on a mid-range mini PC with 16 GB of RAM and a 512 GB SSD — a one-time cost in the range of ₦200,000 to ₦350,000 that handles 50 or more concurrent users on the local network. The StayView subscription covers the software on both deployment modes, so your decision comes down to operational preference, not pricing.",
+      "On hardware cost: an on-premise installation typically runs comfortably on a mid-range mini PC with 16 GB of RAM and a 512 GB SSD — a modest one-time cost that handles 50 or more concurrent users on the local network. The StayView subscription covers the software on both deployment modes, so your decision comes down to operational preference, not pricing.",
     ],
   },
   {
@@ -489,10 +489,10 @@ export const blogPosts: BlogPost[] = [
     author: "StayView Team",
     content: [
       "Hotel inventory is nothing like retail inventory. A retail store manages one category of product flowing in one direction — from supplier to customer. A hotel manages housekeeping supplies for rooms, raw ingredients for the kitchen, beverages for the bar, cleaning materials for maintenance, and consumables for reception — often across multiple stores, departments, and outlets simultaneously, with different approval levels governing each flow.",
-      "The failure mode most hotels fall into is managing this complexity in Excel spreadsheets or informal WhatsApp conversations between department heads and the purchasing officer. Purchase orders are raised verbally or by text message. Deliveries are not counted against what was ordered. Department heads request stock informally and receive whatever is available. Nobody knows the real stock position until someone physically counts everything — by which point the kitchen has already run short of something critical or the bar has been over-ordering for three months.",
+      "The failure mode most hotels fall into is managing this complexity in Excel spreadsheets or informal chat conversations between department heads and the purchasing officer. Purchase orders are raised verbally or by message. Deliveries are not counted against what was ordered. Department heads request stock informally and receive whatever is available. Nobody knows the real stock position until someone physically counts everything — by which point the kitchen has already run short of something critical or the bar has been over-ordering for three months.",
       "StayView's inventory module is built around how hotel operations actually work. You define your stores — a main store, a kitchen store, a bar store, a housekeeping store — and manage stock levels and transfers between them from a single interface. Vendors are added to the system with contact details and payment terms. Purchase orders follow a defined workflow: raised by the purchasing team, approved by management, sent to the vendor, and then confirmed against a goods received note when the delivery arrives and is counted.",
       "Department requisitions follow the same workflow logic. A department head submits a requisition through the system — the kitchen needs 10 kg of rice from the main store, or housekeeping needs 20 bottles of disinfectant. An authorised manager reviews and approves or adjusts the request before any stock is released. The transfer is logged against both stores immediately, and every movement has a timestamp and a user attached to it.",
-      "For hotels using StayView's Restaurant POS, menu items can be linked to their component ingredients with precise quantities per portion. When a plate of jollof rice is sold at the restaurant, the system automatically deducts the corresponding rice, tomato, oil, and seasoning quantities from the kitchen store. Finance can see the cost of sales set against revenue in real time, and the general manager can review gross margin by menu item without waiting for a month-end physical count to reveal what actually left the kitchen.",
+      "For hotels using StayView's Restaurant POS, menu items can be linked to their component ingredients with precise quantities per portion. When a plate of food is sold at the restaurant, the system automatically deducts the corresponding ingredient quantities from the kitchen store. Finance can see the cost of sales set against revenue in real time, and the general manager can review gross margin by menu item without waiting for a month-end physical count to reveal what actually left the kitchen.",
     ],
   },
   {
