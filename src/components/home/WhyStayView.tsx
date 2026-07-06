@@ -9,12 +9,10 @@ export function WhyStayView() {
             Why StayView
           </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-            Not another imported PMS
+          Built for operations, not just distribution
           </h2>
           <p className="mt-4 text-lg text-muted">
-            Global hotel software optimizes for OTAs and Western connectivity. StayView
-            optimizes for how Nigerian properties actually run — including when the
-            network does not.
+          Most hotel software is built for a market with reliable infrastructure everywhere and assumes OTA connectivity is the hard part. StayView is built for the reality most properties actually operate in — including when the network doesn't cooperate.
           </p>
         </div>
 
