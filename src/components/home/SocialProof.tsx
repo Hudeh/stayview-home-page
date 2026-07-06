@@ -29,7 +29,6 @@ export function SocialProof() {
                 <footer className="mt-6 border-t border-white/10 pt-4">
                   <cite className="not-italic">
                     <span className="text-sm font-semibold text-white">{t.role}</span>
-                    <span className="text-sm text-white/50"> · {t.location}</span>
                   </cite>
                 </footer>
               </blockquote>
