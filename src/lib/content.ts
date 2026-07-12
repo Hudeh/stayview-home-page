@@ -312,6 +312,74 @@ export const plans: Plan[] = [
   },
 ];
 
+export type ProductScreenshot = {
+  id: string;
+  src: string;
+  alt: string;
+  title: string;
+  caption: string;
+  width: number;
+  height: number;
+};
+
+/** Product UI screenshots under /public/screenshots */
+export const productScreenshots: ProductScreenshot[] = [
+  {
+    id: "admin-dashboard",
+    src: "/screenshots/admin-dashboard.png",
+    alt: "StayView administrator dashboard with revenue, occupancy, and department health",
+    title: "Admin dashboard",
+    caption: "Live KPIs across front desk, F&B, and inventory",
+    width: 1024,
+    height: 592,
+  },
+  {
+    id: "night-audit",
+    src: "/screenshots/night-audit.png",
+    alt: "StayView night audit control panel with balanced reports and business date rollover",
+    title: "Night audit",
+    caption: "Close the day with balanced reports and rollover",
+    width: 1024,
+    height: 592,
+  },
+  {
+    id: "checkout-modal",
+    src: "/screenshots/checkout-modal.png",
+    alt: "StayView guest checkout modal showing successful checkout and city ledger overpayment",
+    title: "Guest checkout",
+    caption: "Folio settlement with city ledger handling",
+    width: 1024,
+    height: 533,
+  },
+  {
+    id: "outlet-pos",
+    src: "/screenshots/outlet-pos.png",
+    alt: "StayView Outlet POS taking a dine-in order for grilled chicken",
+    title: "Outlet POS",
+    caption: "Fast F&B ordering with modifiers and folio posting",
+    width: 1024,
+    height: 614,
+  },
+  {
+    id: "inventory-products",
+    src: "/screenshots/inventory-products.png",
+    alt: "StayView inventory products management with stock levels and reorder points",
+    title: "Inventory",
+    caption: "Stores, categories, and stock levels in one place",
+    width: 1024,
+    height: 592,
+  },
+  {
+    id: "tax-remittance",
+    src: "/screenshots/tax-remittance.png",
+    alt: "StayView tax remittance report with VAT and service charge breakdown",
+    title: "Tax remittance",
+    caption: "VAT and service charge ready to remit",
+    width: 1024,
+    height: 592,
+  },
+];
+
 export const featureCategories = [
   {
     id: "frontdesk",
@@ -326,6 +394,7 @@ export const featureCategories = [
       "Rate override requests with full audit trail",
       "Booking source and channel attribution tracking",
     ],
+    screenshotId: "checkout-modal",
   },
   {
     id: "folios",
@@ -340,6 +409,7 @@ export const featureCategories = [
       "Night audit pre-check and business date rollover",
       "Tax rules, exchange rates, and multi-currency setup",
     ],
+    screenshotId: "night-audit",
   },
   {
     id: "restaurant",
@@ -354,6 +424,7 @@ export const featureCategories = [
       "Outlet shift reports and daily sales summary",
       "Void and discount handling with supervisor approval controls",
     ],
+    screenshotId: "outlet-pos",
   },
   {
     id: "inventory",
@@ -368,6 +439,7 @@ export const featureCategories = [
       "Recipe-linked menu items with automatic stock deduction on sale",
       "Stock reconciliation and variance reporting",
     ],
+    screenshotId: "inventory-products",
   },
   {
     id: "reports",
@@ -382,6 +454,7 @@ export const featureCategories = [
       "Scheduled PDF and Excel delivery via email",
       "Unified front desk, restaurant, and accounting view",
     ],
+    screenshotId: "tax-remittance",
   },
   {
     id: "hr",
@@ -397,6 +470,7 @@ export const featureCategories = [
       "Monthly payroll batch with per-staff gross, deductions, and net totals",
       "HR submit → accounting approve workflow with GL posting on approval",
     ],
+    screenshotId: "admin-dashboard",
   },
   {
     id: "platform",
@@ -411,6 +485,7 @@ export const featureCategories = [
       "PMS-only, Restaurant-only, or full PMS + Restaurant deployment modes",
       "Secure API for third-party and custom integrations",
     ],
+    screenshotId: "admin-dashboard",
   },
 ];
 

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { featureCategories } from "@/lib/content";
+import { featureCategories, productScreenshots } from "@/lib/content";
 import { getFeatureIcon } from "@/components/svg/FeatureIcons";
 import { CtaBanner } from "@/components/home/CtaBanner";
+import { ProductShot } from "@/components/home/ProductShot";
 
 export const metadata: Metadata = {
   title: "Features",
@@ -30,6 +31,7 @@ export default function FeaturesPage() {
           {featureCategories.map((feature, index) => {
             const Icon = getFeatureIcon(feature.id);
             const reversed = index % 2 === 1;
+            const shot = productScreenshots.find((s) => s.id === feature.screenshotId);
             return (
               <article
                 key={feature.id}
@@ -55,26 +57,16 @@ export default function FeaturesPage() {
                     ))}
                   </ul>
                 </div>
-                <div
-                  className={`rounded-2xl border border-border bg-gradient-to-br from-brand/5 to-brand/15 p-12 ${reversed ? "lg:[direction:ltr]" : ""}`}
-                >
-                  <svg viewBox="0 0 320 240" className="mx-auto w-full max-w-sm" aria-hidden>
-                    <rect width="320" height="240" rx="12" fill="#faf9fc" />
-                    <rect x="24" y="24" width="272" height="32" rx="6" fill="#7352c7" opacity="0.2" />
-                    {[0, 1, 2].map((i) => (
-                      <rect
-                        key={i}
-                        x={24 + i * 92}
-                        y={72}
-                        width="80"
-                        height="64"
-                        rx="8"
-                        fill="#7352c7"
-                        opacity={0.15 + i * 0.1}
-                      />
-                    ))}
-                    <rect x="24" y="152" width="272" height="64" rx="8" fill="#7352c7" opacity="0.12" />
-                  </svg>
+                <div className={reversed ? "lg:[direction:ltr]" : ""}>
+                  {shot ? (
+                    <ProductShot
+                      src={shot.src}
+                      alt={shot.alt}
+                      width={shot.width}
+                      height={shot.height}
+                      sizes="(max-width: 1024px) 100vw, 480px"
+                    />
+                  ) : null}
                 </div>
               </article>
             );

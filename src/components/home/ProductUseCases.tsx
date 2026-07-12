@@ -1,15 +1,27 @@
+import Image from "next/image";
 import Link from "next/link";
 import { productUseCases } from "@/lib/content";
 import {
   BookingEngineIllustration,
   ChannelManagerIllustration,
-  OutletProductIllustration,
-  StayViewProductIllustration,
 } from "@/components/svg/ProductIllustrations";
 
+const productImages = {
+  stayview: {
+    src: "/screenshots/admin-dashboard.png",
+    alt: "StayView administrator dashboard",
+    width: 1024,
+    height: 592,
+  },
+  outlet: {
+    src: "/screenshots/outlet-pos.png",
+    alt: "StayView Outlet restaurant POS",
+    width: 1024,
+    height: 614,
+  },
+} as const;
+
 const illustrations = {
-  stayview: StayViewProductIllustration,
-  outlet: OutletProductIllustration,
   channel: ChannelManagerIllustration,
   booking: BookingEngineIllustration,
 } as const;
@@ -34,7 +46,14 @@ export function ProductUseCases() {
 
         <div className="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-4">
           {productUseCases.map((product) => {
-            const Illustration = illustrations[product.id];
+            const photo =
+              product.id in productImages
+                ? productImages[product.id as keyof typeof productImages]
+                : null;
+            const Illustration =
+              product.id in illustrations
+                ? illustrations[product.id as keyof typeof illustrations]
+                : null;
             const isExternal = (href: string) => href.startsWith("http");
 
             return (
@@ -42,7 +61,20 @@ export function ProductUseCases() {
                 key={product.id}
                 className="card-hover flex flex-col overflow-hidden rounded-2xl border border-border bg-background"
               >
-                <Illustration className="w-full" />
+                {photo ? (
+                  <div className="relative aspect-[16/10] overflow-hidden border-b border-border bg-surface">
+                    <Image
+                      src={photo.src}
+                      alt={photo.alt}
+                      width={photo.width}
+                      height={photo.height}
+                      className="h-full w-full object-cover object-top"
+                      sizes="(max-width: 1024px) 100vw, 25vw"
+                    />
+                  </div>
+                ) : Illustration ? (
+                  <Illustration className="w-full" />
+                ) : null}
                 <div className="flex flex-1 flex-col p-5 xl:p-6">
                   <div className="space-y-2">
                     <h3 className="text-lg font-bold leading-tight xl:text-xl">
@@ -96,7 +128,8 @@ export function ProductUseCases() {
                     >
                       {product.ctaLabel}
                     </Link>
-                    {product.secondaryHref && product.secondaryLabel &&
+                    {product.secondaryHref &&
+                      product.secondaryLabel &&
                       (isExternal(product.secondaryHref) ? (
                         <a
                           href={product.secondaryHref}

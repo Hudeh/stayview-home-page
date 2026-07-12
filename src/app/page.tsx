@@ -1,6 +1,7 @@
 import { CtaBanner } from "@/components/home/CtaBanner";
 import { FeaturePreview } from "@/components/home/FeaturePreview";
 import { Hero } from "@/components/home/Hero";
+import { ProductScreenshots } from "@/components/home/ProductScreenshots";
 import { ProductUseCases } from "@/components/home/ProductUseCases";
 import { SocialProof } from "@/components/home/SocialProof";
 import { SupportOnboarding } from "@/components/home/SupportOnboarding";
@@ -15,6 +16,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <ProductScreenshots />
       <ProductUseCases />
       <WhyStayView />
       <FeaturePreview />

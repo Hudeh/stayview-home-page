@@ -1,15 +1,14 @@
 import Link from "next/link";
-import { HeroIllustration } from "@/components/svg/HeroIllustration";
-import { site } from "@/lib/content";
+import { ProductShot } from "@/components/home/ProductShot";
+import { productScreenshots, site } from "@/lib/content";
+
+const heroShot = productScreenshots.find((s) => s.id === "admin-dashboard")!;
 
 export function Hero() {
   return (
     <section className="hero-mesh relative overflow-hidden text-white">
       <div className="mx-auto grid max-w-6xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:items-center lg:py-28">
         <div>
-          {/* <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-brand-light">
-            By HotelProxi · Cloud & on-premise
-          </p> */}
           <h1 className="mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
             One intelligent platform for{" "}
             <span className="gradient-text">hotels, hostels &amp; more</span>
@@ -47,7 +46,15 @@ export function Hero() {
           </dl>
         </div>
         <div className="relative lg:pl-8">
-          <HeroIllustration className="mx-auto w-full max-w-lg drop-shadow-2xl" />
+          <ProductShot
+            src={heroShot.src}
+            alt={heroShot.alt}
+            width={heroShot.width}
+            height={heroShot.height}
+            priority
+            className="mx-auto w-full max-w-lg rotate-1 border-white/10"
+            sizes="(max-width: 1024px) 90vw, 512px"
+          />
         </div>
       </div>
     </section>
