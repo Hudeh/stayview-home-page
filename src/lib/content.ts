@@ -378,6 +378,15 @@ export const productScreenshots: ProductScreenshot[] = [
     width: 1024,
     height: 592,
   },
+  {
+    id: "booking-engine",
+    src: "/screenshots/booking-engine.png",
+    alt: "StayView booking engine widget for checking availability and booking directly",
+    title: "Booking engine",
+    caption: "Direct bookings from your hotel website",
+    width: 861,
+    height: 696,
+  },
 ];
 
 export const featureCategories = [

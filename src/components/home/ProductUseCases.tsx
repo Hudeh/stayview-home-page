@@ -1,10 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { productUseCases } from "@/lib/content";
-import {
-  BookingEngineIllustration,
-  ChannelManagerIllustration,
-} from "@/components/svg/ProductIllustrations";
+import { ChannelManagerIllustration } from "@/components/svg/ProductIllustrations";
 
 const productImages = {
   stayview: {
@@ -19,11 +16,16 @@ const productImages = {
     width: 1024,
     height: 614,
   },
+  booking: {
+    src: "/screenshots/booking-engine.png",
+    alt: "StayView booking engine widget for direct hotel reservations",
+    width: 861,
+    height: 696,
+  },
 } as const;
 
 const illustrations = {
   channel: ChannelManagerIllustration,
-  booking: BookingEngineIllustration,
 } as const;
 
 export function ProductUseCases() {
