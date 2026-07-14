@@ -13,8 +13,8 @@ export function ProductScreenshots() {
             Built for real hotel operations
           </h2>
           <p className="mt-4 text-lg text-muted">
-            From the morning dashboard to night audit and Outlet POS — the same
-            StayView experience your team uses every day.
+            From the morning dashboard to night audit, HR, and Outlet POS — the
+            same StayView experience your team uses every day.
           </p>
         </div>
 

@@ -387,6 +387,24 @@ export const productScreenshots: ProductScreenshot[] = [
     width: 861,
     height: 696,
   },
+  {
+    id: "hr-dashboard",
+    src: "/screenshots/hr-dashboard.png",
+    alt: "StayView HR dashboard with staff, leave, attendance, and payroll overview",
+    title: "HR dashboard",
+    caption: "Staff, leave, attendance, and payroll in one place",
+    width: 1024,
+    height: 567,
+  },
+  {
+    id: "attendance-station",
+    src: "/screenshots/attendance-station.png",
+    alt: "StayView security attendance station with photo verification for clock in and out",
+    title: "Attendance station",
+    caption: "Photo-verified clock-in for security and supervisors",
+    width: 1024,
+    height: 572,
+  },
 ];
 
 export const featureCategories = [
@@ -479,7 +497,7 @@ export const featureCategories = [
       "Monthly payroll batch with per-staff gross, deductions, and net totals",
       "HR submit → accounting approve workflow with GL posting on approval",
     ],
-    screenshotId: "admin-dashboard",
+    screenshotId: "hr-dashboard",
   },
   {
     id: "platform",
