@@ -46,8 +46,8 @@ export const productUseCases: ProductUseCase[] = [
     modes: ["Full PMS", "Front desk + accounting focus", "Cloud or on-premise"],
     ctaLabel: "Book a StayView demo",
     ctaHref: "/demo",
-    secondaryLabel: "Sign in to PMS",
-    secondaryHref: "https://app.stayview.com.ng/auth/login",
+    secondaryLabel: "",
+    secondaryHref: "",
   },
   {
     id: "outlet",
@@ -67,8 +67,8 @@ export const productUseCases: ProductUseCase[] = [
     modes: ["Standalone F&B", "Integrated with StayView PMS", "Desktop app (Electron)"],
     ctaLabel: "See Outlet in a demo",
     ctaHref: "/demo",
-    secondaryLabel: "Sign in to Outlet",
-    secondaryHref: "https://outlet.stayview.com.ng/login",
+    secondaryLabel: "",
+    secondaryHref: "",
   },
   {
     id: "channel",
