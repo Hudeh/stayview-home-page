@@ -257,6 +257,7 @@ export const plans: Plan[] = [
       "Room management & rate plans",
       "Guest folio & billing",
       "Housekeeping management",
+      "Laundry tickets, estimates & settlement",
       "Automated night audit",
       "Daily operational reports",
       "24 \u00d7 7 live chat support",
@@ -405,6 +406,15 @@ export const productScreenshots: ProductScreenshot[] = [
     width: 1024,
     height: 572,
   },
+  {
+    id: "laundry-management",
+    src: "/screenshots/laundry-management.png",
+    alt: "StayView laundry management with tickets, status board, estimates, and room charge settlement",
+    title: "Laundry management",
+    caption: "Collect, track, invoice, and settle guest laundry jobs",
+    width: 1024,
+    height: 616,
+  },
 ];
 
 export const featureCategories = [
@@ -467,6 +477,21 @@ export const featureCategories = [
       "Stock reconciliation and variance reporting",
     ],
     screenshotId: "inventory-products",
+  },
+  {
+    id: "laundry",
+    title: "Laundry management",
+    description:
+      "Run guest and walk-in laundry from one workspace — collect garments, show an estimate invoice at intake, track pieces through ready and completed, then settle to room charge, city ledger, cash, card, or complimentary. Every job leaves a clear transaction record, and printable invoices with your branch address can be emailed to the guest or company.",
+    bullets: [
+      "Ticket board with open, ready, completed, and revenue-today KPIs",
+      "Cloth price list with quantities, estimates, and final totals",
+      "Settle to room folio, city ledger, cash, card, or complimentary",
+      "Printable laundry invoices with branch letterhead",
+      "Email estimate or final invoice to guest or company",
+      "Works alongside housekeeping for in-house guest laundry",
+    ],
+    screenshotId: "laundry-management",
   },
   {
     id: "reports",

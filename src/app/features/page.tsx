@@ -8,7 +8,7 @@ import { ProductShot } from "@/components/home/ProductShot";
 export const metadata: Metadata = {
   title: "Features",
   description:
-    "Front desk, folios, F&B POS, inventory, HR & payroll, night audit, reports, and multi-property deployment with StayView.",
+    "Front desk, folios, F&B POS, laundry, inventory, HR & payroll, night audit, reports, and multi-property deployment with StayView.",
 };
 
 export default function FeaturesPage() {
@@ -20,7 +20,7 @@ export default function FeaturesPage() {
             Built for every department
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted">
-            StayView unifies front desk, finance, F&B, housekeeping, HR, and leadership
+            StayView unifies front desk, finance, F&B, laundry, housekeeping, HR, and leadership
             in one multi-tenant platform — cloud SaaS or on your own VPS.
           </p>
         </div>

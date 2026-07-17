@@ -74,12 +74,31 @@ export function HrIcon({ className = "" }: IconProps) {
   );
 }
 
+export function LaundryIcon({ className = "" }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 48 48" fill="none" aria-hidden>
+      <rect x="10" y="8" width="28" height="34" rx="6" stroke="#7352c7" strokeWidth="2" />
+      <circle cx="24" cy="26" r="10" stroke="#9b7fe0" strokeWidth="2" />
+      <path
+        d="M18 26c1.5-4 4-6 6-6s4.5 2 6 6"
+        stroke="#7352c7"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <circle cx="18" cy="14" r="1.5" fill="#7352c7" />
+      <circle cx="24" cy="14" r="1.5" fill="#9b7fe0" />
+      <circle cx="30" cy="14" r="1.5" fill="#7352c7" />
+    </svg>
+  );
+}
+
 export const featureIconMap = {
   frontdesk: FrontDeskIcon,
   folios: FolioIcon,
   fb: FbIcon,
   restaurant: FbIcon,
   inventory: InventoryIcon,
+  laundry: LaundryIcon,
   reports: ReportsIcon,
   hr: HrIcon,
   platform: PlatformIcon,
