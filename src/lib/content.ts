@@ -52,7 +52,7 @@ export const productUseCases: ProductUseCase[] = [
   {
     id: "outlet",
     name: "Outlet",
-    tagline: "Restaurant & bar POS",
+    tagline: "Restaurant & Bar POS",
     description:
       "Outlet is StayView's F&B point-of-sale — built for waiters, cashiers, and outlet managers. Take dine-in, takeaway, and room service orders; print kitchen tickets; settle with cash, card, or post charges directly to an in-house guest folio when connected to StayView PMS.",
     forWho: "Hotel restaurants, standalone bars, cafés, and cloud kitchens on StayView",
