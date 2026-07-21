@@ -28,7 +28,7 @@ export default function HomePage() {
               Plans that scale with your rooms
             </h2>
             <p className="mt-5 text-lg text-muted">
-              Transparent NGN pricing by room count and branches. Start with a demo —
+              Transparent pricing for your room count and branches. Start with a demo —
               we&apos;ll recommend the right tier.
             </p>
           </Reveal>
@@ -36,7 +36,7 @@ export default function HomePage() {
             <PricingCards />
           </div>
           <p className="mt-10 text-center text-sm text-muted">
-            Prices shown per billing cycle in NGN. F&amp;B-only and full PMS modes available.
+            Prices shown per billing cycle. F&amp;B-only and full PMS modes available.
           </p>
         </div>
       </section>
