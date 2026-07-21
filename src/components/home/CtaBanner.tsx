@@ -4,10 +4,7 @@ export function CtaBanner() {
   return (
     <section className="hero-mesh noise relative overflow-hidden px-4 py-24 text-center text-white sm:px-6 sm:py-32">
       <div className="relative mx-auto max-w-3xl">
-        <p className="font-display text-2xl font-extrabold tracking-tight sm:text-3xl">
-          Stay<span className="text-brand-light">View</span>
-        </p>
-        <h2 className="mt-6 font-display text-3xl font-bold tracking-tight sm:text-5xl">
+        <h2 className="font-display text-3xl font-bold tracking-tight sm:text-5xl">
           Ready to run your property on StayView?
         </h2>
         <p className="mx-auto mt-5 max-w-xl text-base text-white/65 sm:text-lg">
