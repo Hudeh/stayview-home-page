@@ -153,7 +153,7 @@ export function DemoForm() {
       <button
         type="submit"
         disabled={state === "submitting"}
-        className="w-full rounded-full bg-brand py-4 text-sm font-semibold text-white transition hover:bg-brand-dark disabled:opacity-60 sm:w-auto sm:px-12"
+        className="btn-primary w-full disabled:opacity-60 sm:w-auto sm:min-w-[12rem]"
       >
         {state === "submitting" ? "Sending…" : "Request demo"}
       </button>

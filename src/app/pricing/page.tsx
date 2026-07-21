@@ -34,17 +34,22 @@ const faqs = [
 export default function PricingPage() {
   return (
     <>
-      <section className="border-b border-border bg-surface py-16 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 text-center sm:px-6">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Pricing</h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted">
-            Choose a plan based on room count and branches. All plans include
-            secure multi-tenant hosting and encrypted APIs.
+      <section className="hero-mesh noise relative -mt-[4.25rem] overflow-hidden pt-[calc(4.25rem+6rem)] pb-24 text-white sm:pb-32 sm:pt-[calc(4.25rem+8rem)]">
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
+          <p className="text-sm font-semibold tracking-[0.2em] text-brand-light uppercase">
+            Pricing
+          </p>
+          <h1 className="mt-5 max-w-3xl font-display text-4xl font-bold tracking-tight sm:text-6xl">
+            Clear plans for growing properties
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg text-white/65">
+            Choose by room count and branches. All plans include secure multi-tenant
+            hosting and encrypted APIs.
           </p>
         </div>
       </section>
 
-      <section className="py-16 sm:py-24">
+      <section className="surface-grid py-16 sm:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <PricingCards />
           <p className="mt-10 text-center text-sm text-muted">
@@ -58,12 +63,14 @@ export default function PricingPage() {
 
       <section className="border-t border-border bg-surface py-16 sm:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6">
-          <h2 className="text-center text-2xl font-bold">Frequently asked questions</h2>
-          <dl className="mt-12 space-y-8">
+          <h2 className="font-display text-2xl font-bold sm:text-3xl">
+            Frequently asked questions
+          </h2>
+          <dl className="mt-10 divide-y divide-border border-y border-border">
             {faqs.map((faq) => (
-              <div key={faq.q}>
-                <dt className="text-lg font-semibold">{faq.q}</dt>
-                <dd className="mt-2 text-muted leading-relaxed">{faq.a}</dd>
+              <div key={faq.q} className="py-8">
+                <dt className="font-display text-lg font-semibold">{faq.q}</dt>
+                <dd className="mt-2 leading-relaxed text-muted">{faq.a}</dd>
               </div>
             ))}
           </dl>

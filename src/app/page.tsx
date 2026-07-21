@@ -1,14 +1,12 @@
 import { CtaBanner } from "@/components/home/CtaBanner";
-import { FeaturePreview } from "@/components/home/FeaturePreview";
 import { Hero } from "@/components/home/Hero";
-import { ProductScreenshots } from "@/components/home/ProductScreenshots";
-import { ProductUseCases } from "@/components/home/ProductUseCases";
-import { SocialProof } from "@/components/home/SocialProof";
-import { SupportOnboarding } from "@/components/home/SupportOnboarding";
-import { TrustBar } from "@/components/home/TrustBar";
+import { OpsGallery } from "@/components/home/OpsGallery";
+import { PlatformChapters } from "@/components/home/PlatformChapters";
+import { TrustStrip } from "@/components/home/TrustStrip";
 import { WhyStayView } from "@/components/home/WhyStayView";
 import { PricingCards } from "@/components/pricing/PricingCards";
 import { BlogCard } from "@/components/blog/BlogCard";
+import { Reveal } from "@/components/ui/Reveal";
 import { blogPosts } from "@/lib/content";
 import Link from "next/link";
 
@@ -16,46 +14,54 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <ProductScreenshots />
-      <ProductUseCases />
+      <TrustStrip />
+      <PlatformChapters />
+      <OpsGallery />
       <WhyStayView />
-      <FeaturePreview />
-      <SocialProof />
-      <SupportOnboarding />
-      <TrustBar />
-      <section className="border-y border-border bg-surface py-20 sm:py-28">
+      <section className="surface-grid border-b border-border py-20 sm:py-28">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              Simple, transparent pricing
-            </h2>
-            <p className="mt-4 text-lg text-muted">
-              Plans aligned to room count and branches. Start with a demo — we&apos;ll
-              recommend the right tier.
+          <Reveal className="mx-auto max-w-2xl text-center">
+            <p className="text-sm font-semibold tracking-[0.2em] text-brand uppercase">
+              Pricing
             </p>
-          </div>
+            <h2 className="mt-4 font-display text-3xl font-bold tracking-tight sm:text-5xl">
+              Plans that scale with your rooms
+            </h2>
+            <p className="mt-5 text-lg text-muted">
+              Transparent NGN pricing by room count and branches. Start with a demo —
+              we&apos;ll recommend the right tier.
+            </p>
+          </Reveal>
           <div className="mt-16">
             <PricingCards />
           </div>
-          <p className="mt-8 text-center text-sm text-muted">
-            Prices shown per billing cycle in NGN. F&B-only and full PMS product modes available.
+          <p className="mt-10 text-center text-sm text-muted">
+            Prices shown per billing cycle in NGN. F&amp;B-only and full PMS modes available.
           </p>
         </div>
       </section>
-      <section className="py-20 sm:py-28">
+      <section className="bg-surface py-20 sm:py-28">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+          <Reveal className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
             <div>
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">From the blog</h2>
+              <p className="text-sm font-semibold tracking-[0.2em] text-brand uppercase">
+                Blog
+              </p>
+              <h2 className="mt-4 font-display text-3xl font-bold tracking-tight sm:text-5xl">
+                From the blog
+              </h2>
               <p className="mt-4 text-lg text-muted">
-                Insights on hotel operations, F&B, and technology.
+                Insights on hotel operations, F&amp;B, and technology.
               </p>
             </div>
-            <Link href="/blog" className="text-sm font-semibold text-brand hover:text-brand-dark">
+            <Link
+              href="/blog"
+              className="text-sm font-semibold text-brand hover:text-brand-dark"
+            >
               View all posts →
             </Link>
-          </div>
-          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-2">
+          </Reveal>
+          <div className="mt-12 grid gap-8 md:grid-cols-2">
             {blogPosts.slice(0, 2).map((post) => (
               <BlogCard key={post.slug} post={post} />
             ))}

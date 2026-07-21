@@ -11,11 +11,14 @@ export default function BlogPage() {
   return (
     <>
       <section className="border-b border-border bg-surface py-16 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 text-center sm:px-6">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Blog</h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted">
-            Practical guides for general managers, front office managers, and
-            finance teams running modern hotels.
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <p className="text-sm font-semibold tracking-[0.2em] text-brand uppercase">Blog</p>
+          <h1 className="mt-4 max-w-2xl font-display text-4xl font-bold tracking-tight sm:text-5xl">
+            Operations insights
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg text-muted">
+            Practical guides for general managers, front office managers, and finance
+            teams running modern hotels.
           </p>
         </div>
       </section>

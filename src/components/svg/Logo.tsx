@@ -7,7 +7,7 @@ export function Logo({ className = "" }: { className?: string }) {
       aria-label="StayView"
     >
       <text
-        fontFamily="var(--font-geist-sans), system-ui, sans-serif"
+        fontFamily="var(--font-syne), var(--font-dm-sans), system-ui, sans-serif"
         fontWeight="700"
         fontSize="28"
         letterSpacing="-1"
@@ -31,7 +31,7 @@ export function LogoLight({ className = "" }: { className?: string }) {
       aria-label="StayView"
     >
       <text
-        fontFamily="var(--font-geist-sans), system-ui, sans-serif"
+        fontFamily="var(--font-syne), var(--font-dm-sans), system-ui, sans-serif"
         fontWeight="700"
         fontSize="28"
         letterSpacing="-1"

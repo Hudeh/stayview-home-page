@@ -11,10 +11,10 @@ const productImages = {
     height: 592,
   },
   outlet: {
-    src: "/screenshots/outlet-pos.png",
-    alt: "StayView Outlet restaurant POS",
+    src: "/screenshots/outlet-pos-bar45.png",
+    alt: "StayView Outlet POS with wine menu and an open dine-in order ticket",
     width: 1024,
-    height: 614,
+    height: 640,
   },
   booking: {
     src: "/screenshots/booking-engine.png",
@@ -66,7 +66,7 @@ export function ProductUseCases() {
                 {photo ? (
                   <div className="relative aspect-[16/10] overflow-hidden border-b border-border bg-surface">
                     <Image
-                      src={photo.src}
+                      src={photo.src as string}
                       alt={photo.alt}
                       width={photo.width}
                       height={photo.height}

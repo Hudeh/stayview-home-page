@@ -2,38 +2,25 @@ import Link from "next/link";
 
 export function CtaBanner() {
   return (
-    <section className="py-20">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-brand to-brand-dark px-8 py-16 text-center text-white sm:px-16">
-          <div
-            className="pointer-events-none absolute inset-0 opacity-30"
-            aria-hidden
-          >
-            <svg className="h-full w-full" viewBox="0 0 400 200" preserveAspectRatio="none">
-              <circle cx="350" cy="50" r="120" fill="white" fillOpacity="0.08" />
-              <circle cx="50" cy="180" r="80" fill="white" fillOpacity="0.06" />
-            </svg>
-          </div>
-          <h2 className="relative text-3xl font-bold sm:text-4xl">
-            Ready to modernize your property?
-          </h2>
-          <p className="relative mx-auto mt-4 max-w-xl text-white/80">
-            See StayView live with your workflows — front desk, POS, night audit, and reports.
-          </p>
-          <div className="relative mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-            <Link
-              href="/demo"
-              className="rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-brand hover:bg-white/90"
-            >
-              Book a demo
-            </Link>
-            <Link
-              href="/pricing"
-              className="rounded-full border border-white/30 px-8 py-3.5 text-sm font-semibold text-white hover:bg-white/10"
-            >
-              Compare plans
-            </Link>
-          </div>
+    <section className="hero-mesh noise relative overflow-hidden px-4 py-24 text-center text-white sm:px-6 sm:py-32">
+      <div className="relative mx-auto max-w-3xl">
+        <p className="font-display text-2xl font-extrabold tracking-tight sm:text-3xl">
+          Stay<span className="text-brand-light">View</span>
+        </p>
+        <h2 className="mt-6 font-display text-3xl font-bold tracking-tight sm:text-5xl">
+          Ready to run your property on StayView?
+        </h2>
+        <p className="mx-auto mt-5 max-w-xl text-base text-white/65 sm:text-lg">
+          See front desk, Outlet POS, and night audit with your workflows — not a
+          slide deck.
+        </p>
+        <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center sm:gap-4">
+          <Link href="/demo" className="btn-light w-full sm:w-auto">
+            Book a demo
+          </Link>
+          <Link href="/pricing" className="btn-ghost w-full sm:w-auto">
+            Compare plans
+          </Link>
         </div>
       </div>
     </section>

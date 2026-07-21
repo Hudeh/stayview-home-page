@@ -354,12 +354,12 @@ export const productScreenshots: ProductScreenshot[] = [
   },
   {
     id: "outlet-pos",
-    src: "/screenshots/outlet-pos.png",
-    alt: "StayView Outlet POS taking a dine-in order for grilled chicken",
+    src: "/screenshots/outlet-pos-bar45.png",
+    alt: "StayView Outlet POS with wine menu and an open dine-in order ticket",
     title: "Outlet POS",
     caption: "Fast F&B ordering with modifiers and folio posting",
     width: 1024,
-    height: 614,
+    height: 640,
   },
   {
     id: "inventory-products",

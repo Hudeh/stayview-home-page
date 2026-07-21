@@ -31,7 +31,7 @@ export default async function BlogPostPage({ params }: Props) {
           ← Back to blog
         </Link>
         <div className="mt-8 flex flex-wrap items-center gap-3 text-sm text-muted">
-          <span className="rounded-full bg-brand/10 px-3 py-1 font-medium text-brand">
+          <span className="rounded-md bg-brand/10 px-3 py-1 font-medium text-brand">
             {post.category}
           </span>
           <time dateTime={post.date}>
@@ -44,7 +44,9 @@ export default async function BlogPostPage({ params }: Props) {
           <span>{post.readTime} read</span>
           <span>· {post.author}</span>
         </div>
-        <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">{post.title}</h1>
+        <h1 className="mt-6 font-display text-4xl font-bold tracking-tight sm:text-5xl">
+          {post.title}
+        </h1>
         <p className="mt-6 text-xl leading-relaxed text-muted">{post.excerpt}</p>
         <div className="prose prose-lg mt-12 max-w-none">
           {post.content.map((paragraph) => (

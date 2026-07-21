@@ -1,60 +1,49 @@
 import Link from "next/link";
 import { ProductShot } from "@/components/home/ProductShot";
-import { productScreenshots, site } from "@/lib/content";
+import { productScreenshots } from "@/lib/content";
 
 const heroShot = productScreenshots.find((s) => s.id === "admin-dashboard")!;
 
 export function Hero() {
   return (
-    <section className="hero-mesh relative overflow-hidden text-white">
-      <div className="mx-auto grid max-w-6xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:items-center lg:py-28">
-        <div>
-          <h1 className="mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-            One intelligent platform for{" "}
-            <span className="gradient-text">hotels, hostels &amp; more</span>
+    <section className="hero-mesh noise relative -mt-[4.25rem] overflow-hidden pt-[4.25rem] text-white">
+      <div className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col px-4 pb-0 pt-16 sm:px-6 sm:pt-20 lg:pt-24">
+        <div className="mx-auto max-w-4xl flex-1 text-center">
+          <h1 className="animate-fade-up mx-auto max-w-2xl font-display text-[clamp(1.85rem,5vw,3rem)] font-bold leading-snug tracking-tight text-white/95">
+            One platform. Every department{" "}
+            <span className="gradient-text">in sync.</span>
           </h1>
-          <p className="mt-6 max-w-lg text-lg leading-relaxed text-white/70">
-            {site.tagline}. Front desk, F&amp;B POS, channel manager, booking engine,
-            HR &amp; payroll, night audit, inventory, and analytics — for lodges, serviced apartments,
-            and growing hospitality groups.
+          <p className="animate-fade-up animate-delay-1 mx-auto mt-5 max-w-lg text-base leading-relaxed text-white/65 sm:text-lg">
+            Front desk, Outlet POS, night audit, and analytics — cloud-hosted or
+            on-premise when the network can&apos;t be trusted.
           </p>
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <Link
-              href="/demo"
-              className="inline-flex items-center justify-center rounded-full bg-brand px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand/30 transition hover:bg-brand-dark"
-            >
+          <div className="animate-fade-up animate-delay-2 mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center sm:gap-4">
+            <Link href="/demo" className="btn-primary w-full shadow-lg shadow-brand/30 sm:w-auto">
               Book a free demo
             </Link>
-            <Link
-              href="/pricing"
-              className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
-            >
-              View pricing
+            <Link href="/features" className="btn-ghost w-full sm:w-auto">
+              Explore the platform
             </Link>
           </div>
-          <dl className="mt-12 grid grid-cols-3 gap-6 border-t border-white/10 pt-10">
-            {[
-              { label: "Products", value: "4" },
-              { label: "Deployment", value: "Cloud / VPS" },
-              { label: "Support", value: "24×7 chat" },
-            ].map((stat) => (
-              <div key={stat.label}>
-                <dt className="text-xs uppercase tracking-wider text-white/40">{stat.label}</dt>
-                <dd className="mt-1 text-2xl font-bold text-white">{stat.value}</dd>
-              </div>
-            ))}
-          </dl>
         </div>
-        <div className="relative lg:pl-8">
-          <ProductShot
-            src={heroShot.src}
-            alt={heroShot.alt}
-            width={heroShot.width}
-            height={heroShot.height}
-            priority
-            className="mx-auto w-full max-w-lg rotate-1 border-white/10"
-            sizes="(max-width: 1024px) 90vw, 512px"
+
+        <div className="animate-scale-in animate-delay-2 relative mx-auto mt-14 w-full max-w-5xl lg:mt-16">
+          <div
+            className="pointer-events-none absolute inset-x-[-8%] bottom-0 top-[20%] bg-[radial-gradient(ellipse_at_center,rgba(155,127,224,0.35),transparent_65%)]"
+            aria-hidden
           />
+          <div className="hero-product relative">
+            <ProductShot
+              src={heroShot.src}
+              alt={heroShot.alt}
+              width={heroShot.width}
+              height={heroShot.height}
+              priority
+              variant="dark"
+              className="mx-auto w-full"
+              sizes="(max-width: 1024px) 94vw, 960px"
+            />
+          </div>
         </div>
       </div>
     </section>

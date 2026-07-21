@@ -3,50 +3,72 @@ import { formatPrice, plans } from "@/lib/content";
 
 export function PricingCards({ showAnnualNote = true }: { showAnnualNote?: boolean }) {
   return (
-    <div className="grid gap-8 lg:grid-cols-3">
-      {plans.map((plan) => (
+    <div className="grid gap-6 lg:grid-cols-3 lg:gap-0 lg:overflow-hidden lg:rounded-xl lg:border lg:border-border">
+      {plans.map((plan, index) => (
         <article
           key={plan.id}
-          className={`card-hover relative flex flex-col rounded-2xl border p-8 ${
+          className={`relative flex flex-col p-8 ${
             plan.highlight
-              ? "border-brand bg-surface shadow-xl shadow-brand/10 ring-2 ring-brand"
-              : "border-border bg-surface"
+              ? "bg-brand-ink text-white lg:z-10 lg:scale-[1.02] lg:rounded-xl lg:shadow-2xl lg:shadow-brand-ink/30"
+              : `rounded-xl border border-border bg-surface lg:rounded-none lg:border-0 ${
+                  index < plans.length - 1 ? "lg:border-r lg:border-border" : ""
+                }`
           }`}
         >
           {plan.highlight && (
-            <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-brand px-4 py-1 text-xs font-semibold text-white">
-              Most popular
+            <span className="mb-4 inline-flex w-fit bg-brand-light px-2.5 py-1 text-[11px] font-bold tracking-wide text-brand-ink uppercase">
+              Recommended
             </span>
           )}
-          <h3 className="text-xl font-bold">{plan.name}</h3>
-          <p className="mt-2 text-sm text-muted">{plan.description}</p>
-          <div className="mt-6">
-            <span className="text-4xl font-bold">{formatPrice(plan.monthly)}</span>
-            <span className="text-muted"> / month</span>
+          <h3
+            className={`font-display text-xl font-bold ${
+              plan.highlight ? "text-white" : "text-foreground"
+            }`}
+          >
+            {plan.name}
+          </h3>
+          <p className={`mt-2 text-sm leading-relaxed ${plan.highlight ? "text-white/65" : "text-muted"}`}>
+            {plan.description}
+          </p>
+          <div className="mt-8">
+            <span className="font-display text-4xl font-bold tracking-tight">
+              {formatPrice(plan.monthly)}
+            </span>
+            <span className={plan.highlight ? "text-white/50" : "text-muted"}> / month</span>
           </div>
           {showAnnualNote && (
-            <p className="mt-1 text-xs text-muted">
+            <p className={`mt-1 text-xs ${plan.highlight ? "text-white/45" : "text-muted"}`}>
               or {formatPrice(plan.annual)}/mo billed annually
             </p>
           )}
-          <p className="mt-4 text-sm font-medium text-brand">
+          <p
+            className={`mt-4 text-sm font-semibold ${
+              plan.highlight ? "text-brand-light" : "text-brand"
+            }`}
+          >
             {plan.rooms}
           </p>
-          <ul className="mt-8 flex-1 space-y-3 border-t border-border pt-8">
+          <ul
+            className={`mt-8 flex-1 space-y-3 border-t pt-8 ${
+              plan.highlight ? "border-white/12" : "border-border"
+            }`}
+          >
             {plan.modules.map((m) => (
-              <li key={m} className="flex items-start gap-2 text-sm">
-                <svg className="mt-0.5 h-4 w-4 shrink-0 text-brand" viewBox="0 0 16 16" fill="currentColor">
-                  <path d="M6.5 11.5L3 8l1-1 2.5 2.5L12 4l1 1-6.5 6.5z" />
-                </svg>
-                {m}
+              <li key={m} className="flex items-start gap-2.5 text-sm">
+                <span
+                  className={`mt-2 h-px w-3 shrink-0 ${
+                    plan.highlight ? "bg-brand-light" : "bg-brand"
+                  }`}
+                />
+                <span className={plan.highlight ? "text-white/88" : ""}>{m}</span>
               </li>
             ))}
           </ul>
           <Link
             href="/demo"
-            className={`mt-8 block rounded-full py-3 text-center text-sm font-semibold transition ${
+            className={`header-cta mt-8 block rounded-lg py-3 text-center text-sm font-semibold transition ${
               plan.highlight
-                ? "bg-brand text-white hover:bg-brand-dark"
+                ? "bg-white text-brand hover:bg-white/90"
                 : "border border-border hover:border-brand hover:text-brand"
             }`}
           >
