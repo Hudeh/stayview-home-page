@@ -11,7 +11,6 @@ const footerLinks = {
   ],
   Resources: [
     { href: "/blog", label: "Blog" },
-    { href: site.loginUrl, label: "Sign in", external: true },
     { href: `mailto:${site.email}`, label: "Contact sales", external: true },
   ],
   Legal: [
