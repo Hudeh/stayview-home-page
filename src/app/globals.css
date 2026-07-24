@@ -193,6 +193,164 @@ h3,
     0 36px 80px -20px rgba(0, 0, 0, 0.55);
 }
 
+/* Split hero slideshow */
+.animate-hero-panel {
+  animation: hero-panel-in 1s var(--ease-out) 0.2s both;
+}
+
+.hero-slideshow {
+  position: relative;
+  width: 100%;
+}
+
+.hero-slideshow-glow {
+  position: absolute;
+  inset: 6% -10% -14% -6%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(155, 127, 224, 0.48),
+    transparent 68%
+  );
+  pointer-events: none;
+  animation: hero-glow-pulse 5.5s var(--ease-out) infinite alternate;
+}
+
+.hero-slideshow-frame {
+  position: relative;
+  width: 100%;
+  border-color: rgba(255, 255, 255, 0.32);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 44px 90px -28px rgba(0, 0, 0, 0.62);
+  transform: none;
+}
+
+.hero-slideshow:hover .hero-slideshow-frame {
+  transform: none;
+}
+
+.hero-slideshow-stage {
+  isolation: isolate;
+}
+
+.hero-slideshow-stage img {
+  image-rendering: auto;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translate3d(14px, 0, 0) scale(1.015);
+  transition:
+    opacity 0.7s var(--ease-out),
+    transform 0.8s var(--ease-out);
+  z-index: 0;
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  z-index: 1;
+}
+
+.hero-slide-label {
+  animation: fade-up 0.45s var(--ease-out) both;
+}
+
+.hero-slide-dot {
+  position: relative;
+  height: 0.4rem;
+  width: 0.4rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.28);
+  transition:
+    width 0.35s var(--ease-out),
+    background-color 0.35s ease;
+}
+
+.hero-slide-dot.is-active {
+  width: 1.5rem;
+  background: rgba(155, 127, 224, 0.35);
+}
+
+.hero-slide-progress {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #9b7fe0, #d4c4f5);
+  transform-origin: left center;
+  animation: hero-dot-progress 3.8s linear both;
+}
+
+/* Rotating department headline */
+.hero-dept-rotator {
+  position: relative;
+  display: block;
+  height: 1.2em;
+  overflow: hidden;
+}
+
+.hero-dept-item {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translate3d(0, 110%, 0);
+  transition:
+    opacity 0.45s var(--ease-out),
+    transform 0.55s var(--ease-out);
+  white-space: nowrap;
+}
+
+.hero-dept-item.is-active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes hero-panel-in {
+  from {
+    opacity: 0;
+    transform: translate3d(28px, 12px, 0) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes hero-glow-pulse {
+  from {
+    opacity: 0.7;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes hero-dot-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (max-width: 1023px) {
+  .hero-slideshow-frame {
+    transform: none;
+  }
+
+  .hero-slideshow:hover .hero-slideshow-frame {
+    transform: none;
+  }
+}
+
 /* Sticky product stack — each card covers the previous on scroll */
 .product-stack {
   position: relative;
@@ -550,7 +708,11 @@ h3,
   .hero-mesh::before,
   .animate-fade-up,
   .animate-scale-in,
+  .animate-hero-panel,
   .hero-product,
+  .hero-slideshow-glow,
+  .hero-slide-progress,
+  .hero-slide-label,
   .frame-reveal,
   .reveal.is-visible .frame-reveal,
   .chapter-mark {
@@ -558,12 +720,41 @@ h3,
   }
 
   .hero-product,
-  .animate-scale-in {
+  .animate-scale-in,
+  .hero-slideshow-frame,
+  .hero-slideshow:hover .hero-slideshow-frame {
     transform: none !important;
   }
 
   .hero-shot {
     transform: none;
+  }
+
+  .hero-slide {
+    transition: none;
+  }
+
+  .hero-slide:not(.is-active) {
+    display: none;
+  }
+
+  .hero-slide.is-active {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero-dept-item {
+    transition: none;
+  }
+
+  .hero-dept-item:not(.is-active) {
+    display: none;
+  }
+
+  .hero-dept-item.is-active {
+    opacity: 1;
+    transform: none;
+    position: relative;
   }
 
   .reveal,
