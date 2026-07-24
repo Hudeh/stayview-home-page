@@ -1,12 +1,16 @@
 import Link from "next/link";
+import { Reveal } from "@/components/ui/Reveal";
 import { formatPrice, plans } from "@/lib/content";
 
 export function PricingCards({ showAnnualNote = true }: { showAnnualNote?: boolean }) {
   return (
     <div className="grid gap-6 lg:grid-cols-3 lg:gap-0 lg:overflow-hidden lg:rounded-xl lg:border lg:border-border">
       {plans.map((plan, index) => (
-        <article
+        <Reveal
           key={plan.id}
+          as="article"
+          delayMs={index * 100}
+          variant="fade"
           className={`relative flex flex-col p-8 ${
             plan.highlight
               ? "bg-brand-ink text-white lg:z-10 lg:scale-[1.02] lg:rounded-xl lg:shadow-2xl lg:shadow-brand-ink/30"
@@ -74,7 +78,7 @@ export function PricingCards({ showAnnualNote = true }: { showAnnualNote?: boole
           >
             Get started
           </Link>
-        </article>
+        </Reveal>
       ))}
     </div>
   );

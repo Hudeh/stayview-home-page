@@ -177,6 +177,81 @@ h3,
 .hero-product {
   transform: perspective(1400px) rotateX(6deg) scale(1.02);
   transform-origin: center bottom;
+  animation: hero-float 7s var(--ease-out) 1.2s infinite alternate;
+}
+
+.frame-stage {
+  position: relative;
+}
+
+.frame-stage::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border-radius: 1rem;
+  background: radial-gradient(
+    ellipse at 30% 20%,
+    rgba(115, 82, 199, 0.22),
+    transparent 55%
+  );
+  opacity: 0;
+  transform: scale(0.92);
+  transition:
+    opacity 0.9s var(--ease-out) 0.15s,
+    transform 0.9s var(--ease-out) 0.15s;
+  pointer-events: none;
+}
+
+.reveal.is-visible .frame-stage::before,
+.frame-stage.is-lit::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.frame-reveal {
+  opacity: 0;
+  transform: translate3d(0, 36px, 0) scale(0.96);
+  clip-path: inset(12% 8% 12% 8% round 0.75rem);
+  transition:
+    opacity 0.95s var(--ease-out),
+    transform 0.95s var(--ease-out),
+    clip-path 1.05s var(--ease-out);
+}
+
+.reveal.is-visible .frame-reveal,
+.frame-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  clip-path: inset(0 0 0 0 round 0.75rem);
+  animation: frame-float 6.5s var(--ease-out) 1s infinite alternate;
+}
+
+.frame-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.frame-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.18) 50%,
+    transparent 60%
+  );
+  transform: translateX(-120%);
+  pointer-events: none;
+}
+
+.reveal.is-visible .frame-shine::after,
+.hero-product.frame-shine::after {
+  animation: shine-sweep 1.4s var(--ease-out) 0.45s both;
+}
+
+.hero-product.frame-shine::after {
+  animation-delay: 1.05s;
 }
 
 @keyframes mesh-drift {
@@ -210,6 +285,44 @@ h3,
   }
 }
 
+@keyframes hero-float {
+  from {
+    transform: perspective(1400px) rotateX(6deg) scale(1.02) translate3d(0, 0, 0);
+  }
+  to {
+    transform: perspective(1400px) rotateX(4.5deg) scale(1.025) translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes frame-float {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -8px, 0);
+  }
+}
+
+@keyframes shine-sweep {
+  from {
+    transform: translateX(-120%);
+  }
+  to {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes chapter-mark {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0) scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
 .animate-fade-up {
   animation: fade-up 0.85s var(--ease-out) both;
 }
@@ -234,11 +347,105 @@ h3,
   opacity: 0;
   transform: translate3d(0, 28px, 0);
   transition:
-    opacity 0.75s var(--ease-out),
-    transform 0.75s var(--ease-out);
+    opacity 0.8s var(--ease-out),
+    transform 0.8s var(--ease-out),
+    filter 0.8s var(--ease-out);
+}
+
+.reveal-left {
+  transform: translate3d(-48px, 16px, 0);
+}
+
+.reveal-right {
+  transform: translate3d(48px, 16px, 0);
+}
+
+.reveal-scale {
+  transform: scale(0.92) translate3d(0, 24px, 0);
+}
+
+.reveal-blur {
+  filter: blur(10px);
+  transform: translate3d(0, 20px, 0);
+}
+
+.reveal-fade {
+  transform: none;
+}
+
+.reveal-none {
+  opacity: 1;
+  transform: none;
+  filter: none;
+  transition: none;
 }
 
 .reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: blur(0);
+}
+
+/* Stagger children when parent enters view */
+.reveal-stagger > .stagger-item {
+  opacity: 0;
+  transform: translate3d(0, 22px, 0);
+  transition:
+    opacity 0.7s var(--ease-out),
+    transform 0.7s var(--ease-out);
+}
+
+.reveal-stagger.is-visible > .stagger-item {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.reveal-stagger.is-visible > .stagger-item:nth-child(1) {
+  transition-delay: 0ms;
+}
+.reveal-stagger.is-visible > .stagger-item:nth-child(2) {
+  transition-delay: 90ms;
+}
+.reveal-stagger.is-visible > .stagger-item:nth-child(3) {
+  transition-delay: 180ms;
+}
+.reveal-stagger.is-visible > .stagger-item:nth-child(4) {
+  transition-delay: 270ms;
+}
+.reveal-stagger.is-visible > .stagger-item:nth-child(5) {
+  transition-delay: 360ms;
+}
+.reveal-stagger.is-visible > .stagger-item:nth-child(6) {
+  transition-delay: 450ms;
+}
+.reveal-stagger.is-visible > .stagger-item:nth-child(7) {
+  transition-delay: 540ms;
+}
+
+.reveal.is-visible .chapter-mark {
+  animation: chapter-mark 0.75s var(--ease-out) both;
+}
+
+/* Line-clip headline reveal — triggered by parent .reveal.is-visible */
+.headline-reveal .headline-line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+
+.headline-reveal .headline-line-inner {
+  display: block;
+  opacity: 0;
+  transform: translate3d(0, 110%, 0);
+  transition:
+    opacity 0.75s var(--ease-out),
+    transform 0.85s var(--ease-out);
+  transition-delay: calc(var(--headline-delay, 80ms) + (var(--line-i, 0) * 110ms));
+}
+
+.reveal.is-visible .headline-reveal .headline-line-inner,
+.headline-reveal.is-visible .headline-line-inner {
   opacity: 1;
   transform: translate3d(0, 0, 0);
 }
@@ -275,7 +482,11 @@ h3,
 
   .hero-mesh::before,
   .animate-fade-up,
-  .animate-scale-in {
+  .animate-scale-in,
+  .hero-product,
+  .frame-reveal,
+  .reveal.is-visible .frame-reveal,
+  .chapter-mark {
     animation: none !important;
   }
 
@@ -284,10 +495,29 @@ h3,
     transform: none !important;
   }
 
-  .reveal {
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale,
+  .reveal-blur,
+  .reveal-stagger > .stagger-item,
+  .frame-reveal {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    clip-path: none;
+    transition: none;
+  }
+
+  .headline-reveal .headline-line-inner {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+
+  .frame-stage::before,
+  .frame-shine::after {
+    display: none;
   }
 
   .btn-primary:hover,
