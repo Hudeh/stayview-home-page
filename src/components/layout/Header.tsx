@@ -13,7 +13,6 @@ export function Header({ dark = false }: { dark?: boolean }) {
   const onHero =
     dark ||
     pathname === "/" ||
-    pathname === "/demo" ||
     pathname === "/features" ||
     pathname === "/pricing";
 
