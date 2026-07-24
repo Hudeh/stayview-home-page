@@ -8,7 +8,7 @@ const stripItems = [
 
 export function TrustStrip() {
   return (
-    <section className="border-b border-border bg-surface">
+    <section className="border-b border-border surface-vector">
       <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-10">
         <ul className="grid grid-cols-2 divide-border sm:grid-cols-3 lg:grid-cols-5 lg:divide-x">
           {stripItems.map((item, i) => (

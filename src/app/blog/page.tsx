@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   return (
     <>
-      <section className="border-b border-border bg-surface py-16 sm:py-24">
+      <section className="border-b border-border surface-vector py-16 sm:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <p className="text-sm font-semibold tracking-[0.2em] text-brand uppercase">Blog</p>
           <h1 className="mt-4 max-w-2xl font-display text-4xl font-bold tracking-tight sm:text-5xl">
@@ -22,7 +22,7 @@ export default function BlogPage() {
           </p>
         </div>
       </section>
-      <section className="py-16 sm:py-24">
+      <section className="surface-vector-muted py-16 sm:py-24">
         <div className="mx-auto grid max-w-6xl gap-8 px-4 sm:grid-cols-2 sm:px-6">
           {blogPosts.map((post) => (
             <BlogCard key={post.slug} post={post} />

@@ -48,7 +48,7 @@ export default function DemoPage() {
           </div>
         </div>
 
-        <div className="flex items-center bg-surface px-6 py-16 sm:px-10 lg:px-16 lg:py-24">
+        <div className="surface-vector relative flex items-center px-6 py-16 sm:px-10 lg:px-16 lg:py-24">
           <div className="mx-auto w-full max-w-md">
             <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl">
               Request your demo

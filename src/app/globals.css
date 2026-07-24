@@ -73,6 +73,75 @@ h3,
   background-size: 48px 48px;
 }
 
+/* Brand vector lines on light / white surfaces */
+.surface-vector {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: var(--surface);
+}
+
+.surface-vector-muted {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: var(--background);
+}
+
+.surface-vector::before,
+.surface-vector-muted::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("/vectors/surface-line.svg");
+  background-repeat: no-repeat;
+  background-position: left -2% top 0;
+  background-size: min(38vw, 420px) auto;
+}
+
+.surface-vector::after,
+.surface-vector-muted::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("/vectors/surface-line-right.svg");
+  background-repeat: no-repeat;
+  background-position: right -4% bottom -8%;
+  background-size: min(32vw, 360px) auto;
+  opacity: 0.85;
+}
+
+.surface-vector > *,
+.surface-vector-muted > * {
+  position: relative;
+  z-index: 1;
+}
+
+.surface-grid.surface-vector-muted::before,
+.surface-grid.surface-vector-muted::after {
+  /* keep grid + vector lines together */
+  z-index: 0;
+}
+
+@media (max-width: 640px) {
+  .surface-vector::before,
+  .surface-vector-muted::before {
+    background-size: min(62vw, 280px) auto;
+    background-position: left -8% top 0;
+    opacity: 0.9;
+  }
+
+  .surface-vector::after,
+  .surface-vector-muted::after {
+    background-size: min(48vw, 220px) auto;
+    opacity: 0.7;
+  }
+}
+
 .gradient-text {
   background: linear-gradient(120deg, #ffffff 0%, #d4c4f5 40%, #9b7fe0 100%);
   -webkit-background-clip: text;
@@ -381,6 +450,7 @@ h3,
     0 28px 56px -28px rgba(18, 10, 36, 0.3);
   display: flex;
   align-items: center;
+  isolation: isolate;
 }
 
 .product-stack-card-last {

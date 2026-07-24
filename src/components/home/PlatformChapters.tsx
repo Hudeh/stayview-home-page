@@ -32,7 +32,7 @@ export function PlatformChapters() {
 
   return (
     <section className="border-b border-border">
-      <div className="surface-grid border-b border-border py-20 sm:py-24">
+      <div className="surface-grid surface-vector-muted border-b border-border py-20 sm:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <Reveal variant="none" stagger className="max-w-2xl">
             <p className="stagger-item text-sm font-semibold tracking-[0.2em] text-brand uppercase">
@@ -78,7 +78,7 @@ export function PlatformChapters() {
             >
               <article
                 className={`product-stack-card ${
-                  ink ? "bg-background" : "bg-surface"
+                  ink ? "surface-vector-muted" : "surface-vector"
                 } ${isLast ? "product-stack-card-last" : ""}`}
               >
                 <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-2 lg:gap-16 lg:py-20">

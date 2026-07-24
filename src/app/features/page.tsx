@@ -30,7 +30,7 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      <section className="py-8 sm:py-12">
+      <section className="surface-vector-muted py-8 sm:py-12">
         <div className="mx-auto max-w-6xl space-y-4 px-4 sm:px-6">
           {featureCategories.map((feature, index) => {
             const Icon = getFeatureIcon(feature.id);
@@ -39,7 +39,7 @@ export default function FeaturesPage() {
             return (
               <Reveal key={feature.id} as="article">
                 <div
-                  className={`grid items-center gap-12 rounded-xl border border-border bg-surface px-6 py-12 sm:px-10 lg:grid-cols-2 lg:gap-16 lg:py-16 ${
+                  className={`surface-vector grid items-center gap-12 rounded-xl border border-border px-6 py-12 sm:px-10 lg:grid-cols-2 lg:gap-16 lg:py-16 ${
                     reversed ? "lg:[direction:rtl]" : ""
                   }`}
                 >
@@ -88,7 +88,7 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      <section className="border-t border-border bg-background py-20">
+      <section className="border-t border-border surface-vector-muted py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <h2 className="font-display text-2xl font-bold sm:text-3xl">Product modes</h2>
           <div className="mt-10 grid gap-0 divide-y divide-border border-y border-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">

@@ -19,7 +19,7 @@ export default function HomePage() {
       <PlatformChapters />
       <OpsGallery />
       <WhyStayView />
-      <section className="surface-grid border-b border-border py-20 sm:py-28">
+      <section className="surface-grid surface-vector-muted border-b border-border py-20 sm:py-28">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <Reveal variant="none" stagger className="mx-auto max-w-2xl text-center">
             <p className="stagger-item text-sm font-semibold tracking-[0.2em] text-brand uppercase">
@@ -42,7 +42,7 @@ export default function HomePage() {
           </p>
         </div>
       </section>
-      <section className="bg-surface py-20 sm:py-28">
+      <section className="surface-vector py-20 sm:py-28">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <Reveal
             variant="none"

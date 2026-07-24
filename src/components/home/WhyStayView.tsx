@@ -4,7 +4,7 @@ import { whyStayViewPoints } from "@/lib/content";
 
 export function WhyStayView() {
   return (
-    <section className="border-b border-border bg-surface py-20 sm:py-28">
+    <section className="border-b border-border surface-vector py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid gap-14 lg:grid-cols-[1fr_1.15fr] lg:gap-20">
           <Reveal variant="left" stagger>

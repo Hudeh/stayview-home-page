@@ -25,7 +25,7 @@ export default async function BlogPostPage({ params }: Props) {
   if (!post) notFound();
 
   return (
-    <article className="py-16 sm:py-24">
+    <article className="surface-vector-muted py-16 sm:py-24">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <Link href="/blog" className="text-sm font-semibold text-brand hover:text-brand-dark">
           ← Back to blog

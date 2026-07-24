@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 960" fill="none" aria-hidden="true">
+  <path
+    d="M36 0
+       C36 72 92 96 78 168
+       C64 240 28 280 48 360
+       L220 960"
+    stroke="#7352c7"
+    stroke-width="1.75"
+    stroke-linecap="round"
+    opacity="0.55"
+  />
+  <path
+    d="M72 0
+       C72 88 140 118 122 200
+       C104 282 58 330 82 420
+       L280 960"
+    stroke="#7352c7"
+    stroke-width="1.15"
+    stroke-linecap="round"
+    opacity="0.22"
+  />
+</svg>

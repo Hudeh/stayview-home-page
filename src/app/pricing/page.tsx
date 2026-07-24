@@ -49,7 +49,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="surface-grid py-16 sm:py-24">
+      <section className="surface-grid surface-vector-muted py-16 sm:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <PricingCards />
           <p className="mt-10 text-center text-sm text-muted">
@@ -61,7 +61,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="border-t border-border bg-surface py-16 sm:py-24">
+      <section className="border-t border-border surface-vector py-16 sm:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6">
           <h2 className="font-display text-2xl font-bold sm:text-3xl">
             Frequently asked questions
