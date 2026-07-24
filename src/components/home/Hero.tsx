@@ -1,8 +1,12 @@
 import Link from "next/link";
 import { ProductShot } from "@/components/home/ProductShot";
-import { productScreenshots } from "@/lib/content";
 
-const heroShot = productScreenshots.find((s) => s.id === "admin-dashboard")!;
+const heroShot = {
+  src: "/screenshots/admin-dashboard.png",
+  alt: "StayView administrator dashboard with revenue, occupancy, and department health",
+  width: 1024,
+  height: 640,
+} as const;
 
 export function Hero() {
   return (
@@ -35,21 +39,22 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="animate-scale-in animate-delay-2 relative mx-auto mt-14 w-full max-w-5xl lg:mt-16">
+        <div className="animate-fade-up animate-delay-2 relative mx-auto mt-12 w-full max-w-6xl sm:mt-14 lg:mt-16">
           <div
-            className="pointer-events-none absolute inset-x-[-8%] bottom-0 top-[20%] bg-[radial-gradient(ellipse_at_center,rgba(155,127,224,0.35),transparent_65%)]"
+            className="pointer-events-none absolute inset-x-[-6%] -bottom-8 top-[30%] bg-[radial-gradient(ellipse_at_center,rgba(155,127,224,0.4),transparent_68%)]"
             aria-hidden
           />
-          <div className="hero-product frame-shine relative">
+          <div className="hero-shot relative">
             <ProductShot
               src={heroShot.src}
               alt={heroShot.alt}
               width={heroShot.width}
               height={heroShot.height}
               priority
-              variant="dark"
-              className="mx-auto w-full"
-              sizes="(max-width: 1024px) 94vw, 960px"
+              quality={95}
+              variant="light"
+              className="mx-auto w-full shadow-[0_40px_80px_-24px_rgba(0,0,0,0.65)]"
+              sizes="(max-width: 1024px) 96vw, 1100px"
             />
           </div>
         </div>

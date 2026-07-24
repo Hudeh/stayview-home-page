@@ -9,6 +9,7 @@ type ProductShotProps = {
   className?: string;
   sizes?: string;
   variant?: "light" | "dark";
+  quality?: number;
 };
 
 export function ProductShot({
@@ -20,6 +21,7 @@ export function ProductShot({
   className = "",
   sizes = "(max-width: 1024px) 100vw, 560px",
   variant = "light",
+  quality = 85,
 }: ProductShotProps) {
   const dark = variant === "dark";
 
@@ -44,6 +46,7 @@ export function ProductShot({
         width={width}
         height={height}
         priority={priority}
+        quality={quality}
         sizes={sizes}
         className="h-auto w-full"
       />

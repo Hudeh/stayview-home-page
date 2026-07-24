@@ -332,7 +332,7 @@ export const productScreenshots: ProductScreenshot[] = [
     title: "Admin dashboard",
     caption: "Live KPIs across front desk, F&B, and inventory",
     width: 1024,
-    height: 592,
+    height: 640,
   },
   {
     id: "night-audit",
