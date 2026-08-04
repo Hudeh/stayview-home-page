@@ -16,7 +16,7 @@ type HeroSlideshowProps = {
   intervalMs?: number;
 };
 
-export function HeroSlideshow({ slides, intervalMs = 3800 }: HeroSlideshowProps) {
+export function HeroSlideshow({ slides, intervalMs = 4200 }: HeroSlideshowProps) {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
 
@@ -33,49 +33,35 @@ export function HeroSlideshow({ slides, intervalMs = 3800 }: HeroSlideshowProps)
 
   return (
     <div
-      className="hero-slideshow"
+      className="hero-slideshow hero-slideshow--bleed"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div className="hero-slideshow-glow" aria-hidden />
-
-      <div className="shot-frame-light hero-slideshow-frame relative">
-        <div
-          className="flex items-center gap-1.5 border-b border-border bg-[#f3f0f8] px-3 py-2.5"
-          aria-hidden
-        >
-          <span className="h-2 w-2 rounded-full bg-[#ff5f57]" />
-          <span className="h-2 w-2 rounded-full bg-[#febc2e]" />
-          <span className="h-2 w-2 rounded-full bg-[#28c840]" />
-          <span className="ml-3 h-4 flex-1 rounded bg-white" />
-        </div>
-
-        <div className="hero-slideshow-stage relative aspect-[1024/640] overflow-hidden bg-[#f7f5fb]">
-          {slides.map((slide, i) => (
-            <div
-              key={slide.src}
-              className={`hero-slide ${i === active ? "is-active" : ""}`}
-              aria-hidden={i !== active}
-            >
-              <Image
-                src={slide.src}
-                alt={slide.alt}
-                width={slide.width}
-                height={slide.height}
-                priority={i === 0}
-                quality={100}
-                sizes="(max-width: 1024px) 96vw, 72vw"
-                className="h-full w-full object-cover object-top"
-              />
-            </div>
-          ))}
-        </div>
+      <div className="hero-slideshow-stage relative min-h-[48vh] flex-1 overflow-hidden lg:min-h-0">
+        {slides.map((slide, i) => (
+          <div
+            key={slide.src}
+            className={`hero-slide ${i === active ? "is-active" : ""}`}
+            aria-hidden={i !== active}
+          >
+            <Image
+              src={slide.src}
+              alt={slide.alt}
+              fill
+              priority={i === 0}
+              quality={100}
+              sizes="(max-width: 1023px) 100vw, 62vw"
+              className="object-cover object-left-top"
+            />
+          </div>
+        ))}
+        <div className="hero-slideshow-fade" aria-hidden />
       </div>
 
-      <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
+      <div className="hero-slideshow-bar flex items-center justify-between gap-4 px-5 py-4 sm:px-7">
         <p
           key={slides[active]?.label}
-          className="hero-slide-label font-display text-sm font-semibold tracking-wide text-white/85"
+          className="hero-slide-label font-display text-sm font-semibold tracking-wide text-white/90 sm:text-base"
         >
           {slides[active]?.label}
         </p>

@@ -42,7 +42,7 @@ export function HeroHeadline({ intervalMs = 2200 }: HeroHeadlineProps) {
   }, [intervalMs, reduceMotion]);
 
   return (
-    <h1 className="mt-5 font-display text-[clamp(2rem,4.4vw,3.25rem)] font-bold leading-[1.12] tracking-tight text-white/95">
+    <h1 className="mt-6 font-display text-[clamp(2.15rem,4.8vw,3.65rem)] font-bold leading-[1.08] tracking-tight text-white">
       <span className="block overflow-hidden pb-1">
         <span className="animate-fade-up inline-block">One platform.</span>
       </span>
