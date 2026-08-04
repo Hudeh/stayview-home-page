@@ -356,10 +356,10 @@ export const productScreenshots: ProductScreenshot[] = [
   },
   {
     id: "outlet-pos",
-    src: "/screenshots/outlet-pos-bar45.png",
-    alt: "StayView Outlet POS with wine menu and an open dine-in order ticket",
+    src: "/screenshots/outlet-pos-menu.png",
+    alt: "StayView Outlet POS showing Food categories, cart, and place order for Main Restaurant",
     title: "Outlet POS",
-    caption: "Fast F&B ordering with modifiers and folio posting",
+    caption: "Food & drinks categories, modifiers, and fast place order",
     width: 1024,
     height: 640,
   },
