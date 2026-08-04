@@ -40,9 +40,6 @@ export function Hero() {
 
       <div className="relative mx-auto grid min-h-[100svh] w-full max-w-[100rem] lg:grid-cols-[minmax(0,0.4fr)_minmax(0,0.6fr)]">
         <div className="relative z-10 flex flex-col justify-center px-5 pb-10 pt-[5.5rem] sm:px-8 sm:pb-14 lg:px-12 lg:pb-16 xl:px-16">
-          <p className="animate-fade-up font-display text-[clamp(2.4rem,5vw,3.75rem)] font-extrabold leading-none tracking-tight text-white">
-            StayView
-          </p>
           <p className="animate-fade-up animate-delay-1 mt-3 text-sm font-semibold tracking-[0.2em] text-brand-light uppercase">
             Property management system
           </p>
@@ -54,9 +51,6 @@ export function Hero() {
           </p>
 
           <div className="animate-fade-up animate-delay-3 mt-9 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:gap-4">
-            <Link href="/demo" className="btn-light w-full shadow-lg shadow-black/20 sm:w-auto">
-              Book a free demo
-            </Link>
             <Link href="/features" className="btn-ghost w-full sm:w-auto">
               Explore the platform
             </Link>
