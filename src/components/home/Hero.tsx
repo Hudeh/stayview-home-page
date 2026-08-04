@@ -25,8 +25,8 @@ const heroSlides: HeroSlide[] = [
     height: 640,
   },
   {
-    src: "/screenshots/outlet-pos.png",
-    alt: "StayView Outlet POS with menu tiles and order sidebar",
+    src: "/screenshots/outlet-pos-menu.png",
+    alt: "StayView Outlet POS showing Food categories, cart, and place order for Main Restaurant",
     label: "Outlet POS",
     width: 1024,
     height: 640,
