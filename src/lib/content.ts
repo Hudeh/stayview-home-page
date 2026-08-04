@@ -32,7 +32,7 @@ export const productUseCases: ProductUseCase[] = [
     name: "StayView",
     tagline: "Full property management (PMS)",
     description:
-      "StayView is your hotel operating system — front desk, reservations, housekeeping, folios, night audit, city ledger, inventory, and reports in one place. Built for general managers, front office, finance, and leadership who need every department on the same data.",
+      "StayView is your property management system — front desk, reservations, housekeeping, folios, night audit, city ledger, inventory, and reports in one place. Built for general managers, front office, finance, and leadership who need every department on the same data.",
     forWho: "Hotels, motels, lodges, serviced apartments, and multi-branch groups",
     useCases: [
       "Check in walk-ins and reservations from a live room board",

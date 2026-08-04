@@ -40,12 +40,11 @@ export function Hero() {
         <div className="grid w-full items-center gap-10 lg:grid-cols-[minmax(0,0.88fr)_minmax(0,1.45fr)] lg:gap-10 xl:gap-12">
           <div className="max-w-lg text-left lg:max-w-xl">
             <p className="animate-fade-up text-sm font-semibold tracking-[0.2em] text-brand-light uppercase">
-              Hotel operating system
+              Property management system
             </p>
             <HeroHeadline />
             <p className="animate-fade-up animate-delay-2 mt-6 max-w-md text-base leading-relaxed text-white/65 sm:text-lg">
-              Front desk, Outlet POS, night audit, and analytics — cloud-hosted or
-              on-premise when the network can&apos;t be trusted.
+              Front desk, reservations, housekeeping, folios, night audit, city ledger, inventory, and reports in one place. Built for general managers, front office, finance, and leadership who need every department on the same data.
             </p>
             <div className="animate-fade-up animate-delay-3 mt-9 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:gap-4">
               <Link href="/demo" className="btn-primary w-full shadow-lg shadow-brand/30 sm:w-auto">
