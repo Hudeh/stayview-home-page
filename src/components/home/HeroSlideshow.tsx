@@ -16,9 +16,11 @@ type HeroSlideshowProps = {
   intervalMs?: number;
 };
 
-export function HeroSlideshow({ slides, intervalMs = 4200 }: HeroSlideshowProps) {
+export function HeroSlideshow({ slides, intervalMs = 4500 }: HeroSlideshowProps) {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
+  const current = slides[active] ?? slides[0];
+  const peek = slides[(active + 1) % slides.length];
 
   useEffect(() => {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -31,55 +33,79 @@ export function HeroSlideshow({ slides, intervalMs = 4200 }: HeroSlideshowProps)
     return () => window.clearInterval(id);
   }, [intervalMs, paused, slides.length]);
 
+  if (!current) return null;
+
   return (
     <div
-      className="hero-slideshow hero-slideshow--bleed"
+      className="hero-stage"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div className="hero-slideshow-stage relative min-h-[48vh] flex-1 overflow-hidden lg:min-h-0">
+      <div className="hero-stage-glow" aria-hidden />
+
+      <div className="hero-stage-tabs" role="tablist" aria-label="Product screenshots">
         {slides.map((slide, i) => (
-          <div
+          <button
             key={slide.src}
-            className={`hero-slide ${i === active ? "is-active" : ""}`}
-            aria-hidden={i !== active}
+            type="button"
+            role="tab"
+            aria-selected={i === active}
+            className={`hero-stage-tab ${i === active ? "is-active" : ""}`}
+            onClick={() => setActive(i)}
           >
-            <Image
-              src={slide.src}
-              alt={slide.alt}
-              fill
-              priority={i === 0}
-              quality={100}
-              sizes="(max-width: 1023px) 100vw, 62vw"
-              className="object-cover object-left-top"
-            />
-          </div>
+            {slide.label}
+          </button>
         ))}
-        <div className="hero-slideshow-fade" aria-hidden />
       </div>
 
-      <div className="hero-slideshow-bar flex items-center justify-between gap-4 px-5 py-4 sm:px-7">
-        <p
-          key={slides[active]?.label}
-          className="hero-slide-label font-display text-sm font-semibold tracking-wide text-white/90 sm:text-base"
-        >
-          {slides[active]?.label}
-        </p>
-        <div className="flex items-center gap-2" role="tablist" aria-label="Product screenshots">
+      <div className="hero-stage-stack">
+        {peek && peek.src !== current.src ? (
+          <div className="hero-stage-peek" aria-hidden>
+            <div className="hero-window">
+              <div className="hero-window-chrome">
+                <span />
+                <span />
+                <span />
+              </div>
+              <Image
+                src={peek.src}
+                alt=""
+                width={peek.width}
+                height={peek.height}
+                quality={90}
+                sizes="(max-width: 1023px) 70vw, 40vw"
+                className="hero-window-img"
+              />
+            </div>
+          </div>
+        ) : null}
+
+        <div className="hero-stage-main">
           {slides.map((slide, i) => (
-            <button
+            <div
               key={slide.src}
-              type="button"
-              role="tab"
-              aria-selected={i === active}
-              aria-label={`Show ${slide.label}`}
-              className={`hero-slide-dot ${i === active ? "is-active" : ""}`}
-              onClick={() => setActive(i)}
+              className={`hero-stage-shot ${i === active ? "is-active" : ""}`}
+              aria-hidden={i !== active}
             >
-              {i === active ? (
-                <span key={`progress-${active}`} className="hero-slide-progress" />
-              ) : null}
-            </button>
+              <div className="hero-window hero-window--primary">
+                <div className="hero-window-chrome">
+                  <span />
+                  <span />
+                  <span />
+                  <p className="hero-window-title">app.stayview.com.ng</p>
+                </div>
+                <Image
+                  src={slide.src}
+                  alt={slide.alt}
+                  width={slide.width}
+                  height={slide.height}
+                  priority={i === 0}
+                  quality={100}
+                  sizes="(max-width: 1023px) 94vw, 58vw"
+                  className="hero-window-img"
+                />
+              </div>
+            </div>
           ))}
         </div>
       </div>
