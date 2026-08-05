@@ -29,9 +29,6 @@ export function Footer() {
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/55">
               {site.description}
             </p>
-            <Link href="/demo" className="btn-primary mt-7">
-              Book a demo
-            </Link>
           </div>
 
           {Object.entries(footerLinks).map(([title, links]) => (
