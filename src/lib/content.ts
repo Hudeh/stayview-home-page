@@ -76,7 +76,7 @@ export const productUseCases: ProductUseCase[] = [
     tagline: "OTA & distribution sync",
     tierBadge: "Platinum",
     description:
-      "Push rates and availability to online travel agencies from the same inventory StayView uses at the front desk — so Booking.com, Airbnb, and your walk-in desk never disagree. Reservations from OTAs land in StayView automatically with guest details ready for check-in.",
+      "Push rates and availability through Channex to Booking.com, Expedia, Airbnb, and other OTAs from the same inventory StayView uses at the front desk. StayView does not connect to OTAs directly — Channex is the distribution path. Reservations from those OTAs land in StayView automatically with guest details ready for check-in.",
     forWho: "Properties selling on OTAs who need one source of truth for inventory and rates",
     useCases: [
       "Two-way sync with connected OTAs — rates, availability, and restrictions",
@@ -207,8 +207,9 @@ export const whyStayViewPoints: WhyStayViewPoint[] = [
 ];
 
 export const integrations = [
-  "Booking.com",
-  "Airbnb",
+  "Channex (OTA distribution)",
+  "Booking.com via Channex",
+  "Airbnb via Channex",
   "Thermal printers",
   "Multi-branch",
 ];
