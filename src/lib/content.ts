@@ -366,7 +366,7 @@ export const productScreenshots: ProductScreenshot[] = [
   },
   {
     id: "inventory-products",
-    src: "/screenshots/inventory-products.png",
+    src: "/screenshots/inventory-purchase-page.png",
     alt: "StayView inventory products management with stock levels and reorder points",
     title: "Inventory",
     caption: "Stores, categories, and stock levels in one place",
