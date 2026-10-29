@@ -95,7 +95,7 @@ export default function FeaturesPage() {
             {[
               { title: "Full PMS", desc: "Rooms, F&B, inventory, night audit — complete stack." },
               { title: "F&B standalone", desc: "Outlet POS, menu, orders — without full front desk." },
-              { title: "Premium front desk", desc: "StayView, reservations, housekeeping essentials." },
+              { title: "Hotel Core", desc: "Front desk, reservations, folios, housekeeping, and night audit." },
             ].map((mode) => (
               <div key={mode.title} className="px-0 py-6 sm:px-8 sm:py-8 first:sm:pl-0 last:sm:pr-0">
                 <h3 className="font-display font-semibold text-brand">{mode.title}</h3>

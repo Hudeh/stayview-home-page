@@ -27,18 +27,21 @@ export default function HomePage() {
             </p>
             <AnimatedHeadline
               className="mt-4 font-display text-3xl font-bold tracking-tight sm:text-5xl"
-              lines={["Plans that scale", "with your rooms"]}
+              lines={["Priced by your rooms.", "Add only what you use."]}
             />
             <p className="stagger-item mt-5 text-lg text-muted">
-              Transparent pricing for your room count and branches. Start with a demo —
-              we&apos;ll recommend the right tier.
+              Hotel Core starts at ₦70,000 a month for up to 20 rooms. Laundry, POS, accounting,
+              and the rest are add-ons.
             </p>
           </Reveal>
           <div className="mt-16">
             <PricingCards />
           </div>
           <p className="mt-10 text-center text-sm text-muted">
-            Prices shown per billing cycle. F&amp;B-only and full PMS modes available.
+            Yearly cloud billing includes 2 months.{" "}
+            <Link href="/pricing" className="font-semibold text-brand hover:underline">
+              See add-ons, restaurant, and on-prem prices
+            </Link>
           </p>
         </div>
       </section>

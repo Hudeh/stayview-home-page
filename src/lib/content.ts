@@ -39,8 +39,8 @@ export const productUseCases: ProductUseCase[] = [
       "Post room charges, taxes, and payments to guest or company folios",
       "Run night audit with pre-checks before rolling the business date",
       "Track AR invoices, city ledger, and payment reconciliation",
-      "Manage stores, purchases, and department requisitions (Platinum)",
-      "HR: staff profiles, leave, attendance, shifts, and monthly payroll (Platinum)",
+      "Manage stores, purchases, and department requisitions (add-on)",
+      "HR: staff profiles, leave, attendance, shifts, and monthly payroll (add-on)",
       "View occupancy, revenue, and operational reports in one dashboard",
     ],
     modes: ["Full PMS", "Front desk + accounting focus", "Cloud or on-premise"],
@@ -74,7 +74,7 @@ export const productUseCases: ProductUseCase[] = [
     id: "channel",
     name: "Channel Manager",
     tagline: "OTA & distribution sync",
-    tierBadge: "Platinum",
+    tierBadge: "Add-on",
     description:
       "Push rates and availability through Channex to Booking.com, Expedia, Airbnb, and other OTAs from the same inventory StayView uses at the front desk. StayView does not connect to OTAs directly — Channex is the distribution path. Reservations from those OTAs land in StayView automatically with guest details ready for check-in.",
     forWho: "Properties selling on OTAs who need one source of truth for inventory and rates",
@@ -86,17 +86,17 @@ export const productUseCases: ProductUseCase[] = [
       "Manage channel mappings and room-type parity from the dashboard",
       "Release inventory back to channels when rooms are blocked or out of order",
     ],
-    modes: ["Platinum plan", "Integrated with StayView PMS", "OTA live sync"],
+    modes: ["Add-on module", "Needs Booking Engine", "OTA live sync"],
     ctaLabel: "Discuss channel setup",
     ctaHref: "/demo",
-    secondaryLabel: "See Platinum plan",
+    secondaryLabel: "See pricing",
     secondaryHref: "/pricing",
   },
   {
     id: "booking",
     name: "Booking Engine",
     tagline: "Direct, commission-free bookings",
-    tierBadge: "Platinum",
+    tierBadge: "Add-on",
     description:
       "Let guests book directly from your hotel website — no OTA commission on every reservation. The StayView booking engine shows live availability and rates from your PMS, collects guest details and payment, and creates the reservation in StayView the moment the booking is confirmed.",
     forWho: "Hotels with a website who want more direct revenue and fewer OTA fees",
@@ -108,10 +108,10 @@ export const productUseCases: ProductUseCase[] = [
       "Packages, promotions, and seasonal rate plans",
       "Multi-property groups: book any branch from one engine",
     ],
-    modes: ["Platinum plan", "Website widget"],
+    modes: ["Add-on module", "Website widget"],
     ctaLabel: "Enable booking engine",
     ctaHref: "/demo",
-    secondaryLabel: "See Platinum plan",
+    secondaryLabel: "See pricing",
     secondaryHref: "/pricing",
   },
 ];
@@ -228,92 +228,100 @@ export const navLinks = [
   { href: "/demo", label: "Book a demo" },
 ];
 
-export type Plan = {
+export type CoreBand = {
   id: string;
-  name: string;
+  rooms: string;
   monthly: number;
   annual: number;
-  currency: string;
-  rooms: string;
-  branches: number;
-  highlight?: boolean;
-  description: string;
-  modules: string[];
+  onPrem: number;
+  maintenance: number;
 };
 
-export const plans: Plan[] = [
+/** Hotel Core — the only base. Yearly cloud is 10 months for 12. */
+export const hotelCoreBands: CoreBand[] = [
   {
-    id: "premium",
-    name: "Premium",
-    monthly: 120000,
-    annual: 118000,
-    currency: "NGN",
-    rooms: "Up to 50 rooms per branch",
-    branches: 1,
-    description:
-      "Everything an independent hotel or boutique property needs to run a clean, professional operation — from first reservation to night audit.",
-    modules: [
-      "Front desk, check-in & check-out",
-      "Reservations & walk-in bookings",
-      "Room management & rate plans",
-      "Guest folio & billing",
-      "Housekeeping management",
-      "Laundry tickets, estimates & settlement",
-      "Automated night audit",
-      "Daily operational reports",
-      "24 \u00d7 7 live chat support",
-    ],
+    id: "up-to-20",
+    rooms: "Up to 20 rooms",
+    monthly: 70000,
+    annual: 700000,
+    onPrem: 875000,
+    maintenance: 175000,
   },
   {
-    id: "premium-plus",
-    name: "Premium Plus",
-    monthly: 180000,
-    annual: 178000,
-    currency: "NGN",
-    rooms: "Up to 70 rooms per branch",
-    branches: 4,
-    highlight: true,
-    description:
-      "The complete operating system for growing hotels and multi-outlet properties — full accounting, restaurant POS, inventory control, and advanced revenue insight in one platform.",
-    modules: [
-      "Everything in Premium",
-      "Restaurant POS & multi-outlet management",
-      "Full accounting & chart of accounts",
-      "City ledger, AR & company billing",
-      "Inventory control & procurement",
-      "Maintenance request management",
-      "Channel manager & OTA live sync",
-      "Banquet & event management",
-      "Direct booking engine",
-      "Advanced revenue analytics",
-      "Payment reconciliation & folio audit",
-    ],
+    id: "21-50",
+    rooms: "21–50 rooms",
+    monthly: 100000,
+    annual: 1000000,
+    onPrem: 1250000,
+    maintenance: 250000,
   },
   {
-    id: "platinum",
-    name: "Platinum",
-    monthly: 250000,
-    annual: 248000,
-    currency: "NGN",
-    rooms: "Up to 120 rooms per branch",
-    branches: 6,
-    description:
-      "Enterprise-grade PMS for hotel groups and large properties — HR, security, stock reconciliation, team chat, and a dedicated success team behind you.",
-    modules: [
-      "Everything in Premium Plus",
-      "Human resources & staff profiles",
-      "Leave, attendance & shift management",
-      "Security clock station with photo verification",
-      "Monthly payroll — HR prepares, accounting approves",
-      "Salary payments with general ledger posting",
-      "Cross-department store requisitions",
-      "Physical stock reconciliation",
-      "Team chat",
-      "Email marketing & guest campaigns",
-      "Priority onboarding & training",
-      "Dedicated success manager",
-    ],
+    id: "51-80",
+    rooms: "51–80 rooms",
+    monthly: 140000,
+    annual: 1400000,
+    onPrem: 1750000,
+    maintenance: 350000,
   },
+  {
+    id: "81-120",
+    rooms: "81–120 rooms",
+    monthly: 190000,
+    annual: 1900000,
+    onPrem: 2400000,
+    maintenance: 480000,
+  },
+];
+
+export const hotelCoreIncludes = [
+  "Front desk, check-in and check-out",
+  "Reservations and walk-in bookings",
+  "Rooms and rate plans",
+  "Guest folio and billing",
+  "Housekeeping",
+  "Night audit",
+  "Daily reports",
+  "24 × 7 support",
+];
+
+export type PriceLine = {
+  name: string;
+  monthly: number;
+  onPrem: number;
+  maintenance: number;
+  note?: string;
+};
+
+export const hotelAddons: PriceLine[] = [
+  { name: "Laundry", monthly: 12000, onPrem: 150000, maintenance: 30000 },
+  { name: "Outlet POS", monthly: 18000, onPrem: 225000, maintenance: 45000, note: "Per outlet" },
+  { name: "Accounting, city ledger & AR", monthly: 22000, onPrem: 275000, maintenance: 55000 },
+  { name: "Inventory & procurement", monthly: 12000, onPrem: 150000, maintenance: 30000 },
+  { name: "Maintenance requests", monthly: 5000, onPrem: 60000, maintenance: 12000 },
+  { name: "Banquet & events", monthly: 8000, onPrem: 100000, maintenance: 20000 },
+  { name: "Booking engine", monthly: 10000, onPrem: 125000, maintenance: 25000 },
+  { name: "Channel manager", monthly: 10000, onPrem: 125000, maintenance: 25000, note: "Needs booking engine" },
+  { name: "Revenue analytics", monthly: 5000, onPrem: 60000, maintenance: 12000 },
+  { name: "HR, leave & attendance", monthly: 18000, onPrem: 225000, maintenance: 45000 },
+  { name: "Payroll", monthly: 12000, onPrem: 150000, maintenance: 30000, note: "Needs HR and accounting" },
+  { name: "Security clock station", monthly: 8000, onPrem: 100000, maintenance: 20000 },
+  { name: "Requisitions & stock reconciliation", monthly: 14000, onPrem: 175000, maintenance: 35000 },
+  { name: "Team chat", monthly: 4000, onPrem: 50000, maintenance: 10000 },
+  { name: "Email marketing", monthly: 8000, onPrem: 100000, maintenance: 20000 },
+];
+
+export const fbCores: PriceLine[] = [
+  { name: "Restaurant Core", monthly: 30000, onPrem: 375000, maintenance: 75000, note: "1 terminal" },
+  { name: "Bar & Lounge Core", monthly: 35000, onPrem: 440000, maintenance: 88000, note: "1 terminal" },
+];
+
+export const fbAddons: PriceLine[] = [
+  { name: "Extra terminal", monthly: 10000, onPrem: 125000, maintenance: 25000 },
+  { name: "Kitchen display", monthly: 8000, onPrem: 100000, maintenance: 20000 },
+  { name: "Stock & recipe costing", monthly: 12000, onPrem: 150000, maintenance: 30000, note: "Restaurant" },
+  { name: "Stock by bottle & measure", monthly: 12000, onPrem: 150000, maintenance: 30000, note: "Bar" },
+  { name: "Accounting & reports", monthly: 12000, onPrem: 150000, maintenance: 30000 },
+  { name: "Multi-outlet", monthly: 15000, onPrem: 190000, maintenance: 38000 },
 ];
 
 export type ProductScreenshot = {
@@ -514,7 +522,7 @@ export const featureCategories = [
   {
     id: "hr",
     title: "Human resources & payroll",
-    tierBadge: "Platinum",
+    tierBadge: "Add-on",
     description:
       "Run your people operations inside StayView — not in spreadsheets or a separate HR tool. HR maintains staff profiles with job titles, base salaries, and bank details. Leave requests go through approval workflows. Security or supervisors clock staff in with photo verification, late and overtime tracked against scheduled shifts. Each month, HR prepares payroll for every active employee in one batch, reviews totals, and sends it to accounting. Finance approves or rejects with a full staff breakdown; approved payroll posts salary expenses to the general ledger automatically.",
     bullets: [

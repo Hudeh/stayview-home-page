@@ -1,33 +1,40 @@
 import type { Metadata } from "next";
 import { PricingCards } from "@/components/pricing/PricingCards";
+import { PriceTable } from "@/components/pricing/PriceTable";
 import { CtaBanner } from "@/components/home/CtaBanner";
+import { fbAddons, fbCores, hotelAddons } from "@/lib/content";
 import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Pricing",
-  description: "StayView Premium, Premium Plus, and Platinum plans for hotels of every size.",
+  description:
+    "StayView Hotel Core priced by room count, plus add-on modules, restaurant, and bar. Cloud or on-premises.",
 };
 
 const faqs = [
   {
+    q: "What does Hotel Core include?",
+    a: "Front desk, reservations, rooms and rates, guest folio and billing, housekeeping, night audit, daily reports, and 24/7 support. Laundry, accounting, POS, and the other modules are add-ons.",
+  },
+  {
+    q: "How does yearly cloud billing work?",
+    a: "Pay for 10 months and use the software for 12. A shorter term is charged at the full monthly price.",
+  },
+  {
     q: "Can I run StayView on my own server?",
-    a: "Yes. Platinum and enterprise customers can deploy on-premise with Docker Compose on a VPS while using the same StayView apps.",
+    a: "Yes. On-premises is a one-time licence, then 20% of that amount each year for maintenance. The same apps run in the cloud or on your server.",
   },
   {
-    q: "Is there a trial?",
-    a: "We offer guided demos and trial periods for qualified properties. Book a demo and our team will set up your branch subdomain.",
+    q: "What about a restaurant or bar without rooms?",
+    a: "Restaurant Core is ₦30,000 a month for one terminal. Bar & Lounge Core is ₦35,000. Extra terminals, kitchen display, stock, and accounting are add-ons. Posting a room charge to a hotel folio is included when the property has Hotel Core.",
   },
   {
-    q: "What about F&B-only properties?",
-    a: "Premium Plus supports F&B standalone product mode — outlets, menu, POS, and inventory without full PMS modules.",
+    q: "Are HR and payroll included?",
+    a: "They are add-ons. HR, leave, and attendance is ₦18,000 a month. Payroll is ₦12,000 a month and requires HR and accounting. Channel Manager requires the booking engine.",
   },
   {
-    q: "Is HR and payroll included?",
-    a: "Yes — on Platinum. Staff profiles, leave, attendance, shift schedules, security clock-in, monthly payroll preparation, and accounting approval with general ledger posting are part of the Platinum plan.",
-  },
-  {
-    q: "How does billing work?",
-    a: "Subscriptions are managed per business branch with monthly or annual billing in NGN. Renew through the StayView backoffice portal.",
+    q: "How is Outlet POS priced?",
+    a: "Per outlet. One restaurant or bar outlet is ₦18,000 a month on a hotel licence. Each extra outlet is another ₦18,000.",
   },
 ];
 
@@ -40,24 +47,57 @@ export default function PricingPage() {
             Pricing
           </p>
           <h1 className="mt-5 max-w-3xl font-display text-4xl font-bold tracking-tight sm:text-6xl">
-            Clear plans for growing properties
+            Hotel Core by room count. Add only what you use.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-white/65">
-            Choose by room count and branches. All plans include secure multi-tenant
-            hosting and encrypted APIs.
+            One base price for the property, then add-on modules per property. Prices are in naira.
+            Above 120 rooms, talk to us.
           </p>
         </div>
       </section>
 
       <section className="surface-grid surface-vector-muted py-16 sm:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <PricingCards />
+          <h2 className="font-display text-2xl font-bold sm:text-3xl">Hotel Core</h2>
+          <p className="mt-3 max-w-2xl text-muted">
+            Priced for the property. Yearly cloud billing includes 2 months. On-premises is a one-time
+            licence plus 20% maintenance each year.
+          </p>
+          <div className="mt-10">
+            <PricingCards />
+          </div>
           <p className="mt-10 text-center text-sm text-muted">
-            Need more than 120 rooms or custom integrations?{" "}
+            More than 120 rooms or a custom integration?{" "}
             <Link href="/demo" className="font-semibold text-brand hover:underline">
               Contact sales
             </Link>
           </p>
+        </div>
+      </section>
+
+      <section className="border-t border-border py-16 sm:py-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <h2 className="font-display text-2xl font-bold sm:text-3xl">Add-on modules</h2>
+          <p className="mt-3 max-w-2xl text-muted">
+            Per property, except Outlet POS which is per outlet. Room-charge posting from an outlet
+            to a hotel folio is included with Hotel Core.
+          </p>
+          <div className="mt-8">
+            <PriceTable rows={hotelAddons} />
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-border surface-vector-muted py-16 sm:py-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <h2 className="font-display text-2xl font-bold sm:text-3xl">Restaurant and bar</h2>
+          <p className="mt-3 max-w-2xl text-muted">
+            For a food and beverage business on its own, or extra tools on top of Outlet POS.
+          </p>
+          <div className="mt-8 space-y-8">
+            <PriceTable rows={fbCores} />
+            <PriceTable rows={fbAddons} />
+          </div>
         </div>
       </section>
 

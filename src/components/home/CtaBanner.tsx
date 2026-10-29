@@ -20,7 +20,7 @@ export function CtaBanner() {
               Book a demo
             </Link>
             <Link href="/pricing" className="btn-ghost w-full sm:w-auto">
-              Compare plans
+              See pricing
             </Link>
           </div>
         </Reveal>
