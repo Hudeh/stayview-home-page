@@ -330,7 +330,7 @@ export type ProductScreenshot = {
 export const productScreenshots: ProductScreenshot[] = [
   {
     id: "admin-dashboard",
-    src: "/screenshots/admin-dashboard.png",
+    src: "/screenshots/platform-roles.png",
     alt: "StayView administrator dashboard with revenue, occupancy, and department health",
     title: "Admin dashboard",
     caption: "Live KPIs across front desk, F&B, and inventory",
@@ -375,10 +375,10 @@ export const productScreenshots: ProductScreenshot[] = [
   },
   {
     id: "tax-remittance",
-    src: "/screenshots/tax-remittance.png",
-    alt: "StayView tax remittance report with VAT and service charge breakdown",
-    title: "Tax remittance",
-    caption: "VAT and service charge ready to remit",
+    src: "/screenshots/reports-page.png",
+    alt: "StayView reports page with revenue, occupancy, and department health",
+    title: "Reports",
+    caption: "Revenue, occupancy, and department health in one place",
     width: 1024,
     height: 592,
   },
