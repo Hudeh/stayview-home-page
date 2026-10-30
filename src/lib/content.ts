@@ -300,7 +300,7 @@ export const hotelAddons: PriceLine[] = [
   { name: "Maintenance requests", monthly: 5000, onPrem: 60000, maintenance: 12000 },
   { name: "Banquet & events", monthly: 8000, onPrem: 100000, maintenance: 20000 },
   { name: "Booking engine", monthly: 10000, onPrem: 125000, maintenance: 25000 },
-  { name: "Channel manager", monthly: 10000, onPrem: 125000, maintenance: 25000, note: "Needs booking engine" },
+  { name: "Channel manager", monthly: 10000, onPrem: 125000, maintenance: 25000, note: "Needs booking engine and Hotel Core" },
   { name: "Revenue analytics", monthly: 5000, onPrem: 60000, maintenance: 12000 },
   { name: "HR, leave & attendance", monthly: 18000, onPrem: 225000, maintenance: 45000 },
   { name: "Payroll", monthly: 12000, onPrem: 150000, maintenance: 30000, note: "Needs HR and accounting" },
@@ -313,6 +313,11 @@ export const hotelAddons: PriceLine[] = [
 export const fbCores: PriceLine[] = [
   { name: "Restaurant Core", monthly: 30000, onPrem: 375000, maintenance: 75000, note: "1 terminal" },
   { name: "Bar & Lounge Core", monthly: 35000, onPrem: 440000, maintenance: 88000, note: "1 terminal" },
+];
+
+export const professionalServices: PriceLine[] = [
+  { name: "Dedicated success manager", monthly: 50000, onPrem: 50000, maintenance: 0, note: "Per month" },
+  { name: "Priority onboarding and training", monthly: 0, onPrem: 300000, maintenance: 0, note: "One-off" },
 ];
 
 export const fbAddons: PriceLine[] = [

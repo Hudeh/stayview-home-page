@@ -30,11 +30,19 @@ const faqs = [
   },
   {
     q: "Are HR and payroll included?",
-    a: "They are add-ons. HR, leave, and attendance is ₦18,000 a month. Payroll is ₦12,000 a month and requires HR and accounting. Channel Manager requires the booking engine.",
+    a: "They are add-ons. HR, leave, and attendance is ₦18,000 a month. Payroll is ₦12,000 a month and requires HR and accounting. Channel Manager requires the booking engine and Hotel Core.",
   },
   {
     q: "How is Outlet POS priced?",
-    a: "Per outlet. One restaurant or bar outlet is ₦18,000 a month on a hotel licence. Each extra outlet is another ₦18,000.",
+    a: "Per outlet. One restaurant or bar outlet is ₦18,000 a month on a hotel licence. Each extra outlet is another ₦18,000. Posting that charge to a hotel folio is free when the property has Hotel Core.",
+  },
+  {
+    q: "Is there a discount for both a restaurant and a bar?",
+    a: "Yes. A client who takes both Restaurant Core and Bar & Lounge Core gets 15% off those two plans.",
+  },
+  {
+    q: "What happened to the success manager and onboarding that used to come with Platinum?",
+    a: "They are paid services. A dedicated success manager is ₦50,000 a month. Priority onboarding and training is ₦300,000 once.",
   },
 ];
 
@@ -92,12 +100,23 @@ export default function PricingPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <h2 className="font-display text-2xl font-bold sm:text-3xl">Restaurant and bar</h2>
           <p className="mt-3 max-w-2xl text-muted">
-            For a food and beverage business on its own, or extra tools on top of Outlet POS.
+            For a food and beverage business on its own. Taking both Restaurant Core and Bar &amp; Lounge
+            Core is 15% off those plans. Room-charge posting to a hotel folio is free with Hotel Core.
           </p>
           <div className="mt-8 space-y-8">
             <PriceTable rows={fbCores} />
             <PriceTable rows={fbAddons} />
           </div>
+        </div>
+      </section>
+
+      <section className="border-t border-border py-16 sm:py-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <h2 className="font-display text-2xl font-bold sm:text-3xl">Paid services</h2>
+          <p className="mt-3 max-w-2xl text-muted">
+            These used to be bundled into Platinum. A dedicated success manager is ₦50,000 a month.
+            Priority onboarding and training is ₦300,000 once.
+          </p>
         </div>
       </section>
 
