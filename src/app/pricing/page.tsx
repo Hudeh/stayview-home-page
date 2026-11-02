@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PricingCards } from "@/components/pricing/PricingCards";
 import { PriceTable } from "@/components/pricing/PriceTable";
 import { CtaBanner } from "@/components/home/CtaBanner";
-import { fbAddons, fbCores, hotelAddons } from "@/lib/content";
+import { fbAddons, fbCores, hotelAddons, martAddons, martCores } from "@/lib/content";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -35,6 +35,10 @@ const faqs = [
   {
     q: "How is Outlet POS priced?",
     a: "Per outlet. One restaurant or bar outlet is ₦18,000 a month on a hotel licence. Each extra outlet is another ₦18,000. Posting that charge to a hotel folio is free when the property has Hotel Core.",
+  },
+  {
+    q: "How is StayView Mart priced?",
+    a: "Mart Core for a supermarket is ₦35,000 a month for one store and one till. Extra tills are ₦10,000 each. A hotel shop on a hotel licence uses Mart POS at ₦18,000 a month per store.",
   },
   {
     q: "Is there a discount for both a restaurant and a bar?",
@@ -87,8 +91,8 @@ export default function PricingPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <h2 className="font-display text-2xl font-bold sm:text-3xl">Add-on modules</h2>
           <p className="mt-3 max-w-2xl text-muted">
-            Per property, except Outlet POS which is per outlet. Room-charge posting from an outlet
-            to a hotel folio is included with Hotel Core.
+            Per property, except Outlet POS which is per outlet and Mart POS which is per store.
+            Room-charge posting from an outlet to a hotel folio is included with Hotel Core.
           </p>
           <div className="mt-8">
             <PriceTable rows={hotelAddons} />
@@ -106,6 +110,20 @@ export default function PricingPage() {
           <div className="mt-8 space-y-8">
             <PriceTable rows={fbCores} />
             <PriceTable rows={fbAddons} />
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-border py-16 sm:py-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <h2 className="font-display text-2xl font-bold sm:text-3xl">Supermarket</h2>
+          <p className="mt-3 max-w-2xl text-muted">
+            StayView Mart is the counter till. Shoppers pick items in the store and pay at the
+            cashier. Mart Core is one store and one till. A hotel shop uses Mart POS per store.
+          </p>
+          <div className="mt-8 space-y-8">
+            <PriceTable rows={martCores} />
+            <PriceTable rows={martAddons} />
           </div>
         </div>
       </section>

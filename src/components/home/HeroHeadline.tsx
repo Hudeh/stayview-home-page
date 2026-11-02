@@ -7,6 +7,7 @@ const departments = [
   "Housekeeping",
   "Accounts",
   "Food & beverage",
+  "Mart",
   "Maintenance",
   "Laundry",
   "Inventory",

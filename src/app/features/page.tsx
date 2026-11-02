@@ -91,10 +91,11 @@ export default function FeaturesPage() {
       <section className="border-t border-border surface-vector-muted py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <h2 className="font-display text-2xl font-bold sm:text-3xl">Product modes</h2>
-          <div className="mt-10 grid gap-0 divide-y divide-border border-y border-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+          <div className="mt-10 grid gap-0 divide-y divide-border border-y border-border sm:grid-cols-2 lg:grid-cols-4 sm:divide-x sm:divide-y-0">
             {[
               { title: "Full PMS", desc: "Rooms, F&B, inventory, night audit — complete stack." },
               { title: "F&B standalone", desc: "Outlet POS, menu, orders — without full front desk." },
+              { title: "Mart till", desc: "Supermarket or hotel shop counter POS with barcode and stock." },
               { title: "Hotel Core", desc: "Front desk, reservations, folios, housekeeping, and night audit." },
             ].map((mode) => (
               <div key={mode.title} className="px-0 py-6 sm:px-8 sm:py-8 first:sm:pl-0 last:sm:pr-0">

@@ -31,6 +31,13 @@ const heroSlides: HeroSlide[] = [
     width: 1024,
     height: 640,
   },
+  {
+    src: "/screenshots/mart-pos.png",
+    alt: "StayView Mart supermarket POS with barcode scan, cart, and take payment",
+    label: "StayView Mart",
+    width: 1024,
+    height: 640,
+  },
 ];
 
 export function Hero() {

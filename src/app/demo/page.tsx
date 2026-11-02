@@ -20,8 +20,8 @@ export default function DemoPage() {
               See the platform with your workflows
             </h1>
             <p className="mt-5 text-base leading-relaxed text-white/65 sm:text-lg">
-              Front desk, Outlet POS, night audit, or multi-property setup — we walk
-              through real product screens, not slides.
+              Front desk, Outlet POS, Mart till, night audit, or multi-property setup —
+              we walk through real product screens, not slides.
             </p>
             <ul className="mt-10 space-y-0 divide-y divide-white/10 border-y border-white/10">
               {[

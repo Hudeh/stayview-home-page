@@ -19,6 +19,12 @@ const productImages = {
     width: 1024,
     height: 640,
   },
+  mart: {
+    src: "/screenshots/mart-pos.png",
+    alt: "StayView Mart supermarket POS with scan search, cart, and take payment",
+    width: 1024,
+    height: 640,
+  },
   booking: {
     src: "/screenshots/booking-engine.png",
     alt: "StayView booking engine widget for direct hotel reservations",
@@ -41,15 +47,16 @@ export function PlatformChapters() {
             <AnimatedHeadline
               className="mt-4 font-display text-3xl font-bold tracking-tight sm:text-5xl"
               lines={[
-                "Four products.",
+                "Five products.",
                 <span key="brand" className="text-brand">
                   One source of truth.
                 </span>,
               ]}
             />
             <p className="stagger-item mt-5 max-w-xl text-lg leading-relaxed text-muted">
-              Rooms, F&amp;B, OTAs, and direct bookings share inventory and guest
-              records — so checkout never means reconciling three systems.
+              Rooms, F&amp;B, supermarket tills, OTAs, and direct bookings share
+              inventory and guest records — so checkout never means reconciling
+              three systems.
             </p>
           </Reveal>
         </div>

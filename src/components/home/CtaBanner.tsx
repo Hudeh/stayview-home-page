@@ -12,7 +12,7 @@ export function CtaBanner() {
             lines={["Ready to run your property", "on StayView?"]}
           />
           <p className="stagger-item mx-auto mt-5 max-w-xl text-base text-white/65 sm:text-lg">
-            See front desk, Outlet POS, and night audit with your workflows — not a
+            See front desk, Outlet POS, Mart till, and night audit with your workflows — not a
             slide deck.
           </p>
           <div className="stagger-item mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center sm:gap-4">

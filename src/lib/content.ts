@@ -9,10 +9,11 @@ export const site = {
   loginUrl: "https://app.stayview.com.ng/auth/login",
   setupUrl: "https://config.stayview.com.ng/login",
   outletLoginUrl: "https://outlet.stayview.com.ng/login",
+  martLoginUrl: "https://mart.stayview.com.ng/login",
 };
 
 export type ProductUseCase = {
-  id: "stayview" | "outlet" | "booking" | "channel";
+  id: "stayview" | "outlet" | "mart" | "booking" | "channel";
   name: string;
   tagline: string;
   tierBadge?: string;
@@ -67,8 +68,29 @@ export const productUseCases: ProductUseCase[] = [
     modes: ["Standalone F&B", "Integrated with StayView PMS", "Desktop app (Electron)"],
     ctaLabel: "See Outlet in a demo",
     ctaHref: "/demo",
-    secondaryLabel: "",
-    secondaryHref: "",
+    secondaryLabel: "Open Outlet login",
+    secondaryHref: site.outletLoginUrl,
+  },
+  {
+    id: "mart",
+    name: "StayView Mart",
+    tagline: "Supermarket counter POS",
+    description:
+      "StayView Mart is the till for a supermarket or hotel shop. Cashiers scan barcodes or search by name, ring up the cart, take cash, card, or transfer, and stock updates when the sale is completed — with hold tickets, discounts, loyalty, and VAT built in.",
+    forWho: "Supermarkets, grocery stores, and hotel shops on StayView",
+    useCases: [
+      "Barcode scan and name search at the counter",
+      "Cash, card, transfer, and split payment with change",
+      "Hold a ticket and recall it later",
+      "Discounts, loyalty phone, and points redeem",
+      "Void a completed sale with a manager PIN",
+      "Stock on hand from StayView inventory",
+    ],
+    modes: ["Mart alone", "Mart POS on a hotel licence", "Desktop till (Electron)"],
+    ctaLabel: "See Mart in a demo",
+    ctaHref: "/demo",
+    secondaryLabel: "Open Mart login",
+    secondaryHref: site.martLoginUrl,
   },
   {
     id: "channel",
@@ -117,7 +139,7 @@ export const productUseCases: ProductUseCase[] = [
 ];
 
 export const platformStats = [
-  { value: "4", label: "Product modules" },
+  { value: "5", label: "Product modules" },
   { value: "16+", label: "PMS modules" },
   { value: "Cloud / VPS", label: "Deployment" },
   { value: "Multi-currency", label: "Billing" },
@@ -200,9 +222,9 @@ export const whyStayViewPoints: WhyStayViewPoint[] = [
       "Deep night audit, city ledger, inventory, and folio control — not just OTA connectivity with a thin front desk on top.",
   },
   {
-    title: "One stack: rooms, F&B, and channels",
+    title: "One stack: rooms, F&B, Mart, and channels",
     description:
-      "PMS, Outlet POS, channel manager, and booking engine share one inventory and one guest record — no re-keying between systems.",
+      "PMS, Outlet POS, Mart till, channel manager, and booking engine share one inventory and one guest record — no re-keying between systems.",
   },
 ];
 
@@ -295,6 +317,7 @@ export type PriceLine = {
 export const hotelAddons: PriceLine[] = [
   { name: "Laundry", monthly: 12000, onPrem: 150000, maintenance: 30000 },
   { name: "Outlet POS", monthly: 18000, onPrem: 225000, maintenance: 45000, note: "Per outlet" },
+  { name: "Mart POS", monthly: 18000, onPrem: 225000, maintenance: 45000, note: "Per store, on a hotel licence" },
   { name: "Accounting, city ledger & AR", monthly: 22000, onPrem: 275000, maintenance: 55000 },
   { name: "Inventory & procurement", monthly: 12000, onPrem: 150000, maintenance: 30000 },
   { name: "Maintenance requests", monthly: 5000, onPrem: 60000, maintenance: 12000 },
@@ -313,6 +336,14 @@ export const hotelAddons: PriceLine[] = [
 export const fbCores: PriceLine[] = [
   { name: "Restaurant Core", monthly: 30000, onPrem: 375000, maintenance: 75000, note: "1 terminal" },
   { name: "Bar & Lounge Core", monthly: 35000, onPrem: 440000, maintenance: 88000, note: "1 terminal" },
+];
+
+export const martCores: PriceLine[] = [
+  { name: "Mart Core", monthly: 35000, onPrem: 440000, maintenance: 88000, note: "1 store, 1 till" },
+];
+
+export const martAddons: PriceLine[] = [
+  { name: "Extra till", monthly: 10000, onPrem: 125000, maintenance: 25000 },
 ];
 
 export const professionalServices: PriceLine[] = [
@@ -374,6 +405,15 @@ export const productScreenshots: ProductScreenshot[] = [
     alt: "StayView Outlet POS showing Food categories, cart, and place order for Main Restaurant",
     title: "Outlet POS",
     caption: "Food & drinks categories, modifiers, and fast place order",
+    width: 1024,
+    height: 640,
+  },
+  {
+    id: "mart-pos",
+    src: "/screenshots/mart-pos.png",
+    alt: "StayView Mart supermarket POS with scan search, cart totals, and take payment",
+    title: "StayView Mart",
+    caption: "Barcode till, cart, VAT, and multi-tender payment",
     width: 1024,
     height: 640,
   },

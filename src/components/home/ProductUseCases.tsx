@@ -16,6 +16,12 @@ const productImages = {
     width: 1024,
     height: 640,
   },
+  mart: {
+    src: "/screenshots/mart-pos.png",
+    alt: "StayView Mart supermarket POS with scan search, cart, and take payment",
+    width: 1024,
+    height: 640,
+  },
   booking: {
     src: "/screenshots/booking-engine.png",
     alt: "StayView booking engine widget for direct hotel reservations",
@@ -37,16 +43,15 @@ export function ProductUseCases() {
             Full hospitality suite
           </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-            Four products, one platform
+            Five products, one platform
           </h2>
           <p className="mt-4 text-lg text-muted">
-            Run rooms on StayView, F&amp;B on Outlet, OTAs on Channel Manager, and
-            direct bookings on your website — all sharing the same inventory and guest
-            records.
+            Run rooms on StayView, F&amp;B on Outlet, supermarket counters on Mart,
+            OTAs on Channel Manager, and direct bookings on your website.
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-4">
+        <div className="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-3 xl:grid-cols-5">
           {productUseCases.map((product) => {
             const photo =
               product.id in productImages
@@ -159,8 +164,8 @@ export function ProductUseCases() {
         <p className="mx-auto mt-12 max-w-3xl text-center text-sm leading-relaxed text-muted">
           <strong className="font-semibold text-foreground">Together:</strong> a channel
           booking lands in StayView, the guest checks in at the front desk, orders dinner
-          on Outlet, and every charge — room, tax, and F&amp;B — sits on one folio before
-          night audit closes the day. Direct website bookings follow the same path.
+          on Outlet, shops the hotel store on Mart, and every charge — room, tax, F&amp;B,
+          and retail — sits on one stack before night audit closes the day.
         </p>
       </div>
     </section>

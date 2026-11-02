@@ -6,8 +6,8 @@ import { productScreenshots } from "@/lib/content";
 const galleryIds = [
   "night-audit",
   "outlet-pos",
+  "mart-pos",
   "hr-dashboard",
-  "laundry-management",
 ] as const;
 
 export function OpsGallery() {
@@ -29,7 +29,7 @@ export function OpsGallery() {
             lines={["Built for the work", "after check-in"]}
           />
           <p className="stagger-item mt-5 text-lg leading-relaxed text-white/65">
-            Night audit, Outlet POS, HR, and laundry — the screens your teams open
+            Night audit, Outlet POS, Mart till, and HR — the screens your teams open
             every day, not marketing mockups.
           </p>
         </Reveal>
