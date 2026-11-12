@@ -48,6 +48,11 @@ export const metadata: Metadata = {
     siteName: site.name,
     type: "website",
   },
+  verification: {
+    other: {
+      "facebook-domain-verification": "hixomrpupl3p2ywbw0fjys7gcjx0q1",
+    },
+  },
 };
 
 export default function RootLayout({
