@@ -145,6 +145,30 @@ export const platformStats = [
   { value: "Multi-currency", label: "Billing" },
 ];
 
+export type Customer = {
+  id: string;
+  name: string;
+  logoSrc: string;
+  logoAlt: string;
+  /** Short line under the logo, e.g. property type */
+  tagline?: string;
+  width: number;
+  height: number;
+};
+
+/** Logos for the homepage “Customers” section — add more as they go live. */
+export const customers: Customer[] = [
+  {
+    id: "hi-royal",
+    name: "Hi-Royal",
+    logoSrc: "/customers/hi-royal.png",
+    logoAlt: "Hi-Royal logo",
+    tagline: "Hospitality",
+    width: 1024,
+    height: 682,
+  },
+];
+
 export type Testimonial = {
   quote: string;
   role: string;

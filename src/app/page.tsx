@@ -1,4 +1,5 @@
 import { CtaBanner } from "@/components/home/CtaBanner";
+import { Customers } from "@/components/home/Customers";
 import { Hero } from "@/components/home/Hero";
 import { OpsGallery } from "@/components/home/OpsGallery";
 import { PlatformChapters } from "@/components/home/PlatformChapters";
@@ -16,6 +17,7 @@ export default function HomePage() {
     <>
       <Hero />
       <TrustStrip />
+      <Customers />
       <PlatformChapters />
       <OpsGallery />
       <WhyStayView />
