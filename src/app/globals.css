@@ -872,6 +872,61 @@ h3,
     linear-gradient(180deg, #120a24 0%, #1a1032 100%);
 }
 
+/* Customers logo marquee — continuous flow */
+.customer-marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+}
+
+.customer-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: customer-marquee 42s linear infinite;
+}
+
+.customer-marquee:hover .customer-marquee-track {
+  animation-play-state: paused;
+}
+
+.customer-marquee-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.customer-marquee-item {
+  transition: transform 0.35s var(--ease-out);
+}
+
+.customer-marquee-item:hover {
+  transform: translateY(-4px);
+}
+
+@keyframes customer-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -885,8 +940,29 @@ h3,
   .hero-stage-glow,
   .frame-reveal,
   .reveal.is-visible .frame-reveal,
-  .chapter-mark {
+  .chapter-mark,
+  .customer-marquee-track {
     animation: none !important;
+  }
+
+  .customer-marquee-track {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 56rem;
+    margin-inline: auto;
+    gap: 1.25rem;
+  }
+
+  .customer-marquee-group:last-child {
+    display: none;
+  }
+
+  .customer-marquee-group {
+    padding-right: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.25rem;
   }
 
   .hero-product,

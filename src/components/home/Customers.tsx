@@ -1,10 +1,41 @@
 import Image from "next/image";
-import { customers } from "@/lib/content";
+import { customers, type Customer } from "@/lib/content";
 import { AnimatedHeadline } from "@/components/ui/AnimatedHeadline";
 import { Reveal } from "@/components/ui/Reveal";
 
+function CustomerLogoCard({ name, logoSrc, logoAlt, tagline, width, height }: Customer) {
+  return (
+    <figure className="customer-marquee-item flex w-[9.5rem] shrink-0 flex-col items-center sm:w-[11rem]">
+      <div className="relative aspect-[3/2] w-full overflow-hidden rounded-xl border border-white/10 bg-black">
+        <Image
+          src={logoSrc}
+          alt={logoAlt}
+          width={width}
+          height={height}
+          className="h-full w-full object-contain object-center p-3 sm:p-3.5"
+          sizes="176px"
+        />
+      </div>
+      <figcaption className="mt-2.5 text-center">
+        <p className="font-display text-sm font-semibold tracking-tight text-white/90">
+          {name}
+        </p>
+        {tagline ? (
+          <p className="mt-0.5 text-[10px] tracking-wide text-white/45 uppercase">
+            {tagline}
+          </p>
+        ) : null}
+      </figcaption>
+    </figure>
+  );
+}
+
 export function Customers() {
   if (customers.length === 0) return null;
+
+  // Enough copies so the strip scrolls smoothly even with one logo
+  const loopCount = Math.max(8, customers.length * 3);
+  const loop = Array.from({ length: loopCount }, (_, i) => customers[i % customers.length]);
 
   return (
     <section className="ink-band noise relative overflow-hidden border-b border-white/10 py-20 text-white sm:py-28">
@@ -27,51 +58,27 @@ export function Customers() {
             and operations on one platform.
           </p>
         </Reveal>
-
-        <div
-          className={`mt-14 grid gap-6 sm:gap-8 ${
-            customers.length === 1
-              ? "mx-auto max-w-md"
-              : customers.length === 2
-                ? "mx-auto max-w-3xl sm:grid-cols-2"
-                : "sm:grid-cols-2 lg:grid-cols-3"
-          }`}
-        >
-          {customers.map((customer, i) => (
-            <Reveal
-              key={customer.id}
-              delayMs={i * 100}
-              variant="scale"
-              className="group"
-            >
-              <figure className="customer-logo-tile flex flex-col items-center">
-                <div className="customer-logo-frame relative w-full overflow-hidden rounded-2xl border border-white/10 bg-black shadow-[0_28px_56px_-28px_rgba(0,0,0,0.55)] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1">
-                  <div className="relative aspect-[3/2] w-full">
-                    <Image
-                      src={customer.logoSrc}
-                      alt={customer.logoAlt}
-                      width={customer.width}
-                      height={customer.height}
-                      className="h-full w-full object-contain object-center p-6 sm:p-8"
-                      sizes="(max-width: 640px) 90vw, 360px"
-                    />
-                  </div>
-                </div>
-                <figcaption className="mt-5 text-center">
-                  <p className="font-display text-lg font-semibold tracking-tight text-white">
-                    {customer.name}
-                  </p>
-                  {customer.tagline ? (
-                    <p className="mt-1 text-sm tracking-wide text-white/50 uppercase">
-                      {customer.tagline}
-                    </p>
-                  ) : null}
-                </figcaption>
-              </figure>
-            </Reveal>
-          ))}
-        </div>
       </div>
+
+      <Reveal variant="fade" className="mt-12 sm:mt-14">
+        <div className="customer-marquee" aria-label="Customer logos">
+          <div className="customer-marquee-fade customer-marquee-fade-left" aria-hidden />
+          <div className="customer-marquee-fade customer-marquee-fade-right" aria-hidden />
+          <div className="customer-marquee-track">
+            {[0, 1].map((copy) => (
+              <div
+                key={copy}
+                className="customer-marquee-group"
+                aria-hidden={copy === 1 ? true : undefined}
+              >
+                {loop.map((customer, i) => (
+                  <CustomerLogoCard key={`${copy}-${customer.id}-${i}`} {...customer} />
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </Reveal>
     </section>
   );
 }
