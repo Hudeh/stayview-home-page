@@ -32,10 +32,10 @@ export function PricingCards() {
               </span>
             </p>
             <Link
-              href="/demo"
+              href="/demo?intent=trial"
               className="header-cta mt-6 block rounded-lg border border-border py-3 text-center text-sm font-semibold transition hover:border-brand hover:text-brand"
             >
-              Get started
+              Start free trial
             </Link>
           </Reveal>
         ))}

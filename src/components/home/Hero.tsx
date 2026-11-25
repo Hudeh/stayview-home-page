@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { HeroHeadline } from "@/components/home/HeroHeadline";
 import { HeroSlideshow, type HeroSlide } from "@/components/home/HeroSlideshow";
+import { trialOffer, whatsappUrl } from "@/lib/content";
 
 const heroSlides: HeroSlide[] = [
   {
@@ -48,23 +49,37 @@ export function Hero() {
       <div className="relative mx-auto grid min-h-[100svh] w-full max-w-[96rem] items-center gap-8 px-4 pb-14 pt-[5.5rem] sm:px-6 sm:pb-16 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.35fr)] lg:gap-6 lg:px-8 lg:pb-20 xl:gap-10">
         <div className="relative z-10 max-w-xl lg:max-w-none">
           <p className="animate-fade-up text-sm font-semibold tracking-[0.2em] text-brand-light uppercase">
-            Property management system
+            Stop revenue leakage
           </p>
 
           <HeroHeadline />
 
           <p className="animate-fade-up animate-delay-2 mt-6 max-w-md text-base leading-relaxed text-white/70 sm:text-lg">
-            Frontdesk, reservations, housekeeping, folios, night audit, city ledger, inventory, and reports — every department on the same data.
+            Every naira posts to the guest folio — even when the internet is down. Cloud or
+            on-premise. Front desk, F&amp;B, night audit, and accounts on one stack.
           </p>
 
           <div className="animate-fade-up animate-delay-3 mt-9 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:gap-4">
-            <Link href="/demo" className="btn-light w-full shadow-lg shadow-black/20 sm:w-auto">
-              Book a free demo
+            <Link href={trialOffer.ctaHref} className="btn-light w-full shadow-lg shadow-black/20 sm:w-auto">
+              {trialOffer.ctaLabel}
             </Link>
-            <Link href="/features" className="btn-ghost w-full sm:w-auto">
-              Explore the platform
-            </Link>
+            <a
+              href={whatsappUrl("Hi StayView — I want a quick walkthrough of the PMS.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-ghost w-full sm:w-auto"
+            >
+              Chat on WhatsApp
+            </a>
           </div>
+          <p className="animate-fade-up animate-delay-3 mt-4 text-sm text-white/45">
+            Or{" "}
+            <Link href="/demo" className="font-semibold text-white/70 underline-offset-2 hover:text-white hover:underline">
+              book a live demo
+            </Link>
+            {" · "}
+            Hotel Core from ₦70,000/mo
+          </p>
         </div>
 
         <div className="animate-hero-panel relative w-full min-w-0 lg:justify-self-end">

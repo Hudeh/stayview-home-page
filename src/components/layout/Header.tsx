@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Logo, LogoLight } from "@/components/svg/Logo";
-import { navLinks } from "@/lib/content";
+import { navLinks, trialOffer } from "@/lib/content";
 
 export function Header({ dark = false }: { dark?: boolean }) {
   const pathname = usePathname();
@@ -82,10 +82,10 @@ export function Header({ dark = false }: { dark?: boolean }) {
 
         <div className="hidden items-center gap-3 md:flex">
           <Link
-            href="/demo"
+            href={trialOffer.ctaHref}
             className="header-cta rounded-lg bg-brand px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-dark"
           >
-            Book a demo
+            Free trial
           </Link>
         </div>
 
@@ -132,11 +132,11 @@ export function Header({ dark = false }: { dark?: boolean }) {
               </Link>
             ))}
             <Link
-              href="/demo"
+              href={trialOffer.ctaHref}
               className="header-cta mt-2 rounded-lg bg-brand px-5 py-3 text-center text-sm font-semibold text-white"
               onClick={() => setOpen(false)}
             >
-              Book a demo
+              Start free trial
             </Link>
           </nav>
         </div>

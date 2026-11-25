@@ -2,13 +2,23 @@ import type { Metadata } from "next";
 import { PricingCards } from "@/components/pricing/PricingCards";
 import { PriceTable } from "@/components/pricing/PriceTable";
 import { CtaBanner } from "@/components/home/CtaBanner";
-import { fbAddons, fbCores, hotelAddons, martAddons, martCores } from "@/lib/content";
+import { OfferBanner } from "@/components/home/OfferBanner";
+import {
+  fbAddons,
+  fbCores,
+  foundingOffer,
+  hotelAddons,
+  martAddons,
+  martCores,
+  trialOffer,
+  yearEndOffer,
+} from "@/lib/content";
 import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "StayView Hotel Core priced by room count, plus add-on modules, restaurant, and bar. Cloud or on-premises.",
+    "StayView Hotel Core from ₦70,000/mo, add-ons from ₦4,000/mo. Cloud or on-premises. 14-day free trial.",
 };
 
 const faqs = [
@@ -56,17 +66,27 @@ export default function PricingPage() {
       <section className="hero-mesh noise relative -mt-[4.25rem] overflow-hidden pt-[calc(4.25rem+6rem)] pb-24 text-white sm:pb-32 sm:pt-[calc(4.25rem+8rem)]">
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
           <p className="text-sm font-semibold tracking-[0.2em] text-brand-light uppercase">
-            Pricing
+            Pricing · from ₦70,000/mo
           </p>
           <h1 className="mt-5 max-w-3xl font-display text-4xl font-bold tracking-tight sm:text-6xl">
-            Hotel Core by room count. Add only what you use.
+            Hotel Core by room count. Add-ons priced in the open.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-white/65">
-            One base price for the property, then add-on modules per property. Prices are in naira.
-            Above 120 rooms, talk to us.
+            One base price for the property, then add-on modules with clear naira rates.{" "}
+            {trialOffer.headline}. Sign before {yearEndOffer.deadlineLabel} for free setup and
+            migration. {foundingOffer.headline}: {foundingOffer.discountLabel}.
           </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Link href={trialOffer.ctaHref} className="btn-light w-full sm:w-auto">
+              {trialOffer.ctaLabel}
+            </Link>
+            <Link href="/demo" className="btn-ghost w-full sm:w-auto">
+              Book a demo
+            </Link>
+          </div>
         </div>
       </section>
+      <OfferBanner />
 
       <section className="surface-grid surface-vector-muted py-16 sm:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">

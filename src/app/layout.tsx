@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, Syne } from "next/font/google";
+import { WhatsAppButton } from "@/components/home/WhatsAppButton";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { StayViewHelpChat } from "@/components/StayViewHelpChat";
@@ -66,6 +67,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <WhatsAppButton />
         <StayViewHelpChat audience="public" app="website" />
       </body>
     </html>

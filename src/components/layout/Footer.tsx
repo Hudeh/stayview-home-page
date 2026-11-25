@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { LogoLight } from "@/components/svg/Logo";
-import { navLinks, site } from "@/lib/content";
+import { navLinks, site, whatsappUrl } from "@/lib/content";
 
 const footerLinks = {
   Product: [
     { href: "/features", label: "Features" },
     { href: "/pricing", label: "Pricing" },
-    { href: "/demo", label: "Book a demo" },
+    { href: "/demo?intent=trial", label: "Free trial" },
     { href: site.setupUrl, label: "Property setup", external: true },
   ],
   Apps: [
@@ -16,11 +16,12 @@ const footerLinks = {
   ],
   Resources: [
     { href: "/blog", label: "Blog" },
+    { href: whatsappUrl(), label: "WhatsApp", external: true },
     { href: `mailto:${site.email}`, label: "Contact sales", external: true },
   ],
   Legal: [
-    { href: "#", label: "Privacy policy" },
-    { href: "#", label: "Terms of service" },
+    { href: "/privacy", label: "Privacy policy" },
+    { href: "/terms", label: "Terms of service" },
   ],
 };
 

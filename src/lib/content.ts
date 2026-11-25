@@ -1,16 +1,93 @@
 export const site = {
   name: "StayView",
-  tagline: "The PMS built for how properties actually operate",
+  tagline: "Stop revenue leakage. Every naira on the folio — even offline.",
   description:
-    "StayView PMS unifies front desk, restaurant POS, night audit, inventory, city ledger, HR & payroll, and live analytics in one platform for hotels, hostels, lodges, and hospitality groups. Host in the cloud or run on-premise when reliable internet isn't guaranteed.",
+    "StayView is the PMS for Nigerian hotels that stop revenue leakage: front desk, restaurant POS, night audit, inventory, and city ledger on one platform. Cloud when you want speed; on-premise when the internet drops — every charge still posts to the guest folio.",
   url: "https://stayview.com.ng",
   email: "stayviewpms@gmail.com",
   phone: "+234 905 800 7738",
+  /** Digits only for wa.me links */
+  whatsapp: "2349058007738",
   loginUrl: "https://app.stayview.com.ng/auth/login",
   setupUrl: "https://config.stayview.com.ng/login",
   outletLoginUrl: "https://outlet.stayview.com.ng/login",
   martLoginUrl: "https://mart.stayview.com.ng/login",
 };
+
+export function whatsappUrl(message?: string) {
+  const text =
+    message ??
+    "Hi StayView — I'd like to learn more about the PMS for my property.";
+  return `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(text)}`;
+}
+
+/** Year-end close offer — visible until end of 2026-12-31 local. */
+export const yearEndOffer = {
+  deadlineLabel: "31 Dec 2026",
+  deadlineIso: "2026-12-31",
+  headline: "Year-end deal: free setup & migration",
+  summary:
+    "Sign before 31 Dec and get free setup, free data migration, and 2 months free on yearly billing.",
+  bullets: [
+    "Free property setup and staff go-live training",
+    "Free data migration from Excel or your current PMS",
+    "2 months free when you pay yearly (10 months for 12)",
+  ],
+};
+
+export const foundingOffer = {
+  headline: "Founding-client price",
+  summary:
+    "Up to 30% off for life in exchange for a short testimonial and your logo on this site. Limited founding slots.",
+  discountLabel: "Up to 30% off for life",
+};
+
+export const trialOffer = {
+  days: 14,
+  headline: "14-day free trial",
+  summary:
+    "Run StayView on a trial branch with your rooms and rates — no card required to start.",
+  ctaLabel: "Start 14-day free trial",
+  ctaHref: "/demo?intent=trial",
+};
+
+export type CaseStudy = {
+  customerId: string;
+  property: string;
+  role: string;
+  metric: string;
+  metricDetail: string;
+  quote: string;
+  logoSrc: string;
+  logoAlt: string;
+  logoWidth: number;
+  logoHeight: number;
+};
+
+/** Single real proof block for the homepage (no fake logo marquee). */
+export const caseStudy: CaseStudy = {
+  customerId: "hi-royal",
+  property: "Hi-Royal",
+  role: "Front office operations",
+  metric: "Hours → minutes",
+  metricDetail: "Night audit closed in minutes instead of a multi-hour chase across tickets and folios.",
+  quote:
+    "Night audit used to mean chasing restaurant tickets and open folios. StayView pre-checks show everything in one list — we close the day in minutes, not hours.",
+  logoSrc: "/customers/hi-royal.png",
+  logoAlt: "Hi-Royal logo",
+  logoWidth: 1024,
+  logoHeight: 682,
+};
+
+/** Popular add-ons surfaced on the homepage so visitors see full cost early. */
+export const featuredAddons = [
+  { name: "Outlet POS", monthly: 18000, note: "Per outlet" },
+  { name: "Mart POS", monthly: 18000, note: "Per store" },
+  { name: "Accounting & AR", monthly: 22000 },
+  { name: "Inventory", monthly: 12000 },
+  { name: "Booking engine", monthly: 10000 },
+  { name: "Channel manager", monthly: 10000, note: "Needs booking engine" },
+] as const;
 
 export type ProductUseCase = {
   id: "stayview" | "outlet" | "mart" | "booking" | "channel";
@@ -231,14 +308,14 @@ export type WhyStayViewPoint = {
 
 export const whyStayViewPoints: WhyStayViewPoint[] = [
   {
-    title: "Built for real operations, not a demo environment",
+    title: "Stop revenue leakage at the folio",
     description:
-      "Configured around how your front desk, finance, and F&B teams actually work day to day — local tax and folio workflows, multi-currency billing, and support in your timezone.",
+      "Restaurant tickets, laundry, and room charges post to the guest bill automatically — so checkout isn't a treasure hunt and unposted sales don't vanish.",
   },
   {
     title: "Runs when the internet doesn't",
     description:
-      "Cloud for speed, on-premise for resilience. Same StayView app on your local network when connectivity is unreliable.",
+      "Cloud for speed, on-premise when connectivity fails. Same StayView app on your local network — every naira still posts. Cloud-only competitors can't match that.",
   },
   {
     title: "Operations-first, not distribution-only",
@@ -271,7 +348,7 @@ export const navLinks = [
   { href: "/features", label: "Features" },
   { href: "/pricing", label: "Pricing" },
   { href: "/blog", label: "Blog" },
-  { href: "/demo", label: "Book a demo" },
+  { href: "/demo", label: "Free trial" },
 ];
 
 export type CoreBand = {

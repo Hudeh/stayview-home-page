@@ -1,6 +1,8 @@
+import { AddonPreview } from "@/components/home/AddonPreview";
 import { CtaBanner } from "@/components/home/CtaBanner";
 import { Customers } from "@/components/home/Customers";
 import { Hero } from "@/components/home/Hero";
+import { OfferBanner } from "@/components/home/OfferBanner";
 import { OpsGallery } from "@/components/home/OpsGallery";
 import { PlatformChapters } from "@/components/home/PlatformChapters";
 import { TrustStrip } from "@/components/home/TrustStrip";
@@ -9,13 +11,14 @@ import { PricingCards } from "@/components/pricing/PricingCards";
 import { BlogCard } from "@/components/blog/BlogCard";
 import { AnimatedHeadline } from "@/components/ui/AnimatedHeadline";
 import { Reveal } from "@/components/ui/Reveal";
-import { blogPosts } from "@/lib/content";
+import { blogPosts, yearEndOffer } from "@/lib/content";
 import Link from "next/link";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
+      <OfferBanner />
       <TrustStrip />
       <Customers />
       <PlatformChapters />
@@ -32,17 +35,18 @@ export default function HomePage() {
               lines={["Priced by your rooms.", "Add only what you use."]}
             />
             <p className="stagger-item mt-5 text-lg text-muted">
-              Hotel Core starts at ₦70,000 a month for up to 20 rooms. Laundry, POS, accounting,
-              and the rest are add-ons.
+              Hotel Core from ₦70,000/mo (up to 20 rooms). Add-ons from ₦4,000/mo. Sign before{" "}
+              {yearEndOffer.deadlineLabel} for free setup and migration.
             </p>
           </Reveal>
           <div className="mt-16">
             <PricingCards />
           </div>
+          <AddonPreview />
           <p className="mt-10 text-center text-sm text-muted">
             Yearly cloud billing includes 2 months.{" "}
             <Link href="/pricing" className="font-semibold text-brand hover:underline">
-              See add-ons, restaurant, and on-prem prices
+              See restaurant, Mart, and on-prem prices
             </Link>
           </p>
         </div>
